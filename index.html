@@ -18,6 +18,11 @@
   <!-- AOS (Animate On Scroll) Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
+  <!-- PayPal SDK Hosted Buttons (Mes de Prueba $5 USD) -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAnAE99CWgRaiX2qT37n2IfzAPugu5qhLgDI262Xll8fH_6C4grb-D3sxXxCiPUVBzsNWxZ8041gS4W00&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
+
   <style>
     /* ==========================================================================
        VARIABLES Y RESET GLOBAL
@@ -2394,7 +2399,7 @@
       <!-- Cuadrícula de Paquetes en USD -->
       <div class="pricing-table-grid active" id="pricing-usd">
         
-        <!-- Paquete 1 Mes (Promoción Especial de Prueba) -->
+        <!-- Paquete 1 Mes (Promoción Especial de Prueba con PayPal) -->
         <div class="price-plan-card" data-aos="zoom-in-up" style="border: 2px solid #ef4444; position: relative;">
           <span class="popular-ribbon" style="background:#ef4444;box-shadow: 0 4px 12px rgba(239,68,68,0.4);">⚡ PROMO ESPECIAL · 58% OFF</span>
           <div class="plan-header-name" style="color:#ef4444;">1 Mes (Prueba Especial)</div>
@@ -2411,11 +2416,18 @@
             <li><i class="fas fa-check"></i> 12.000+ Series y Películas completas</li>
             <li><i class="fas fa-check"></i> 180+ Canales en Vivo con EPG</li>
             <li><i class="fas fa-check"></i> Sin contratos ni renovación forzada</li>
-            <li><i class="fas fa-check"></i> Activación inmediata en tu app</li>
+            <li><i class="fas fa-check"></i> Pago online seguro e instantáneo</li>
           </ul>
-          <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20aprovechar%20la%20Promoción%20Especial%20de%20Prueba%20de%201%20Mes%20por%20solo%20$5%20USD%20(Valor%20$12%20USD)" target="_blank" class="btn-plan-select" style="background:#25d366;border-color:#25d366;color:#fff;font-weight:800;">
-            <i class="fab fa-whatsapp"></i> Reclamar Promo $5 USD
-          </a>
+
+          <!-- Botón Oficial de PayPal Hosted Buttons -->
+          <div id="paypal-container-7AGLVTWBCJCS4" style="margin-top: 14px; min-height: 48px;"></div>
+
+          <!-- Alternativa de Compra por WhatsApp -->
+          <div style="margin-top: 10px; text-align: center;">
+            <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20aprovechar%20la%20Promoción%20Especial%20de%20Prueba%20de%201%20Mes%20por%20solo%20$5%20USD%20(Valor%20$12%20USD)" target="_blank" style="font-size:0.82rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:6px;font-weight:600;">
+              <i class="fab fa-whatsapp" style="color:#25d366;font-size:1rem;"></i> ¿Preferís pagar por WhatsApp?
+            </a>
+          </div>
         </div>
 
         <!-- Paquete 3 Meses (Trimestral) -->
@@ -2981,6 +2993,23 @@
     function handleLoginSubmit(e) {
       e.preventDefault();
       alert('Credenciales enviadas correctamente. Redirigiendo a tu panel de streaming...');
+    }
+
+    // Inicialización del Botón Oficial de PayPal para el Mes de Prueba ($5 USD)
+    function initPayPalButton() {
+      if (window.paypal && typeof paypal.HostedButtons === 'function') {
+        paypal.HostedButtons({
+          hostedButtonId: "7AGLVTWBCJCS4",
+        }).render("#paypal-container-7AGLVTWBCJCS4");
+      } else {
+        setTimeout(initPayPalButton, 400);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPayPalButton);
+    } else {
+      initPayPalButton();
     }
   </script>
 </body>
