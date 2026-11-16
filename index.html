@@ -18,10 +18,7 @@
   <!-- AOS (Animate On Scroll) Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
-  <!-- PayPal SDK Hosted Buttons (Mes de Prueba $5 USD) -->
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAAnAE99CWgRaiX2qT37n2IfzAPugu5qhLgDI262Xll8fH_6C4grb-D3sxXxCiPUVBzsNWxZ8O4lgS4W0O&components=hosted-buttons&enable-funding=venmo&currency=USD">
-  </script>
+  <!-- Favicon y estilos -->
 
   <style>
     /* ==========================================================================
@@ -2419,8 +2416,38 @@
             <li><i class="fas fa-check"></i> Pago online seguro e instantáneo</li>
           </ul>
 
-          <!-- Botón Oficial de PayPal Hosted Buttons -->
-          <div id="paypal-container-7AGLVTWBCJCS4" style="margin-top: 14px; min-height: 48px;"></div>
+          <!-- Botón Oficial de PayPal -->
+          <div style="margin-top: 15px; display: flex; justify-content: center;">
+            <style>
+              .pp-7AGLVTWBCJCS4 {
+                text-align: center;
+                border: none;
+                border-radius: 0.35rem;
+                min-width: 100%;
+                width: 100%;
+                padding: 0 1.5rem;
+                height: 2.75rem;
+                font-weight: bold;
+                background-color: #FFD140;
+                color: #000000;
+                font-family: "Helvetica Neue", Arial, sans-serif;
+                font-size: 1rem;
+                line-height: 1.25rem;
+                cursor: pointer;
+                transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+              }
+              .pp-7AGLVTWBCJCS4:hover {
+                background-color: #f7c52a;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(255, 209, 64, 0.4);
+              }
+            </style>
+            <form action="https://www.paypal.com/ncp/payment/7AGLVTWBCJCS4" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;width:100%;">
+              <input class="pp-7AGLVTWBCJCS4" type="submit" value="Comprar ahora" />
+              <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" style="max-width:100%;height:auto;" />
+              <section style="font-size: 0.75rem; color: var(--text-muted);"> Con la tecnología de <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+            </form>
+          </div>
 
           <!-- Alternativa de Compra por WhatsApp -->
           <div style="margin-top: 10px; text-align: center;">
@@ -2993,24 +3020,6 @@
     function handleLoginSubmit(e) {
       e.preventDefault();
       alert('Credenciales enviadas correctamente. Redirigiendo a tu panel de streaming...');
-    }
-
-    // Inicialización del Botón Oficial de PayPal para el Mes de Prueba ($5 USD)
-    function initPayPalButton() {
-      const container = document.getElementById('paypal-container-7AGLVTWBCJCS4');
-      if (container && container.children.length === 0 && window.paypal && typeof paypal.HostedButtons === 'function') {
-        paypal.HostedButtons({
-          hostedButtonId: "7AGLVTWBCJCS4",
-        }).render("#paypal-container-7AGLVTWBCJCS4");
-      } else if (container && container.children.length === 0) {
-        setTimeout(initPayPalButton, 300);
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initPayPalButton);
-    } else {
-      initPayPalButton();
     }
   </script>
 </body>
