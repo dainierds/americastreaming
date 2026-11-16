@@ -1722,6 +1722,33 @@
       transform: translateY(-4px);
     }
 
+    /* Botón Flotante WhatsApp Business */
+    #btnWhatsAppFloat {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    #btnWhatsAppFloat:hover {
+      background: #1ebc57;
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
+      color: #ffffff;
+    }
+
     /* ==========================================================================
        VENTANAS MODALES (DEMO REAL DE VIDEO & LOGIN)
        ========================================================================== */
@@ -2355,40 +2382,36 @@
   </section>
 
   <!-- ==========================================================================
-       SECCIÓN 6: TABLA DE PRECIOS CON PESTAÑAS ARS / USD
-       (MISMO SISTEMA DE PESTAÑAS Y TARJETAS BLANCAS DE LA REFERENCIA ORIGINAL)
+       SECCIÓN 6: TABLA DE PRECIOS EN DÓLARES (USD) CON COMPRA DIRECTA VÍA WHATSAPP
        ========================================================================== -->
   <section class="precios-section" id="precios">
     <div class="container">
       <div class="section-title" data-aos="zoom-in">
-        <h2>Elija su plan</h2>
-        <p>Planes flexibles que se adaptan a tus necesidades de entretenimiento sin costos ocultos.</p>
+        <h2>Paquetes y Precios en USD</h2>
+        <p>Precios oficiales en Dólares (USD). Activación inmediata y soporte personalizado a través de nuestro WhatsApp Business.</p>
       </div>
 
-      <!-- Selector de Moneda -->
-      <div class="pricing-currency-tabs" data-aos="fade-up">
-        <button class="currency-btn active" onclick="switchCurrency('ars', this)">Pesos AR</button>
-        <button class="currency-btn" onclick="switchCurrency('usd', this)">Dólares US</button>
-      </div>
-
-      <!-- Planes en Pesos Argentinos (ARS) -->
-      <div class="pricing-table-grid active" id="pricing-ars">
+      <!-- Cuadrícula de Paquetes en USD -->
+      <div class="pricing-table-grid active" id="pricing-usd">
         
         <!-- Paquete 1 Mes (Prueba) -->
         <div class="price-plan-card" data-aos="zoom-in-up">
           <div class="plan-header-name">1 Mes (Prueba)</div>
           <div class="plan-price-tag">
-            <sup>$</sup>14.900<sub>/mes</sub>
+            <sup>U$D</sup>12<sub>/mes</sub>
           </div>
-          <p style="color:var(--text-muted);font-size:0.8rem;margin-top:-15px;margin-bottom:15px;">Pago mensual sin renovación forzada</p>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-top:-15px;margin-bottom:15px;">Mes de prueba sin contratos ni compromisos</p>
           <ul class="plan-features-list">
             <li><i class="fas fa-check"></i> 3 Pantallas simultáneas</li>
             <li><i class="fas fa-check"></i> Calidad 4K Ultra HD & Full HD</li>
             <li><i class="fas fa-check"></i> 12.000+ Series y Películas</li>
             <li><i class="fas fa-check"></i> 180+ Canales en Vivo con EPG</li>
-            <li><i class="fas fa-check"></i> Ideal para probar sin compromiso</li>
+            <li><i class="fas fa-check"></i> Acceso mundial sin restricciones</li>
+            <li><i class="fas fa-check"></i> Activación inmediata en tu app</li>
           </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 1 Mes</a>
+          <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20comprar%20el%20Paquete%20de%201%20Mes%20($12%20USD)" target="_blank" class="btn-plan-select" style="background:#25d366;border-color:#25d366;color:#fff;">
+            <i class="fab fa-whatsapp"></i> Comprar Paquete
+          </a>
         </div>
 
         <!-- Paquete 3 Meses (Trimestral) -->
@@ -2396,17 +2419,20 @@
           <span class="popular-ribbon" style="background:#0077b6;">Ahorro 20%</span>
           <div class="plan-header-name">3 Meses</div>
           <div class="plan-price-tag">
-            <sup>$</sup>35.900<sub>/trimestre</sub>
+            <sup>U$D</sup>29<sub>/3 meses</sub>
           </div>
-          <p style="color:#10b981;font-weight:700;font-size:0.82rem;margin-top:-15px;margin-bottom:15px;">Equivale a $11.960 / mes</p>
+          <p style="color:#10b981;font-weight:700;font-size:0.85rem;margin-top:-15px;margin-bottom:15px;">Equivale a U$D 9.67 / mes</p>
           <ul class="plan-features-list">
             <li><i class="fas fa-check"></i> 3 Pantallas simultáneas</li>
             <li><i class="fas fa-check"></i> Calidad 4K Ultra HD + HDR</li>
-            <li><i class="fas fa-check"></i> Acceso total al catálogo</li>
+            <li><i class="fas fa-check"></i> Catálogo completo y estrenos semanales</li>
             <li><i class="fas fa-check"></i> Todos los canales de deportes en vivo</li>
-            <li><i class="fas fa-check"></i> Ahorrás $8.800 vs pago mes a mes</li>
+            <li><i class="fas fa-check"></i> Ahorras $7 USD frente al pago mes a mes</li>
+            <li><i class="fas fa-check"></i> Soporte técnico vía WhatsApp</li>
           </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 3 Meses</a>
+          <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20comprar%20el%20Paquete%20de%203%20Meses%20($29%20USD)" target="_blank" class="btn-plan-select" style="background:#25d366;border-color:#25d366;color:#fff;">
+            <i class="fab fa-whatsapp"></i> Comprar Paquete
+          </a>
         </div>
 
         <!-- Paquete 6 Meses (Semestral) -->
@@ -2414,111 +2440,41 @@
           <span class="popular-ribbon" style="background:#e50914;">🔥 Más Popular</span>
           <div class="plan-header-name">6 Meses</div>
           <div class="plan-price-tag">
-            <sup>$</sup>59.900<sub>/semestre</sub>
+            <sup>U$D</sup>49<sub>/6 meses</sub>
           </div>
-          <p style="color:#10b981;font-weight:700;font-size:0.82rem;margin-top:-15px;margin-bottom:15px;">Equivale a $9.980 / mes (Ahorro 33%)</p>
+          <p style="color:#10b981;font-weight:700;font-size:0.85rem;margin-top:-15px;margin-bottom:15px;">Equivale a U$D 8.17 / mes (Ahorro 32%)</p>
           <ul class="plan-features-list">
             <li><i class="fas fa-check"></i> 4 Pantallas simultáneas</li>
             <li><i class="fas fa-check"></i> Calidad 4K HDR + Dolby Atmos</li>
             <li><i class="fas fa-check"></i> Eventos PPV y Canales Premium VIP</li>
-            <li><i class="fas fa-check"></i> Función de Grabación en la Nube</li>
-            <li><i class="fas fa-check"></i> Soporte prioritario vía WhatsApp</li>
+            <li><i class="fas fa-check"></i> Grabación en la nube (Cloud DVR)</li>
+            <li><i class="fas fa-check"></i> Ahorras $23 USD frente al pago mensual</li>
+            <li><i class="fas fa-check"></i> Soporte prioritario inmediato</li>
           </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 6 Meses</a>
+          <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20comprar%20el%20Paquete%20de%206%20Meses%20($49%20USD)" target="_blank" class="btn-plan-select" style="background:#25d366;border-color:#25d366;color:#fff;">
+            <i class="fab fa-whatsapp"></i> Comprar Paquete
+          </a>
         </div>
 
         <!-- Paquete 12 Meses (Anual - DESTACADO) -->
-        <div class="price-plan-card highlighted" data-aos="zoom-in-up" data-aos-delay="300">
-          <span class="popular-ribbon">👑 Mejor Valor · Ahorro 45%</span>
-          <div class="plan-header-name">12 Meses (Anual)</div>
-          <div class="plan-price-tag">
-            <sup>$</sup>98.900<sub>/año</sub>
-          </div>
-          <p style="color:var(--accent-gold);font-weight:700;font-size:0.85rem;margin-top:-15px;margin-bottom:15px;">¡Solo $8.240 / mes!</p>
-          <ul class="plan-features-list">
-            <li><i class="fas fa-check"></i> 4 Pantallas (+ 1 Pantalla Extra Gratis)</li>
-            <li><i class="fas fa-check"></i> Calidad 4K HDR Máxima sin compresión</li>
-            <li><i class="fas fa-check"></i> Todos los canales, estrenos y PPV</li>
-            <li><i class="fas fa-check"></i> Precio congelado por 1 año completo</li>
-            <li><i class="fas fa-check"></i> Soporte VIP dedicado 24/7</li>
-          </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 12 Meses</a>
-        </div>
-
-      </div>
-
-      <!-- Planes en Dólares (USD) -->
-      <div class="pricing-table-grid" id="pricing-usd">
-        
-        <!-- Paquete 1 Mes USD (Prueba) -->
-        <div class="price-plan-card" data-aos="zoom-in-up">
-          <div class="plan-header-name">1 Mes (Prueba)</div>
-          <div class="plan-price-tag">
-            <sup>U$D</sup>12<sub>/mes</sub>
-          </div>
-          <p style="color:var(--text-muted);font-size:0.8rem;margin-top:-15px;margin-bottom:15px;">Mes de prueba sin contratos</p>
-          <ul class="plan-features-list">
-            <li><i class="fas fa-check"></i> 3 Pantallas simultáneas</li>
-            <li><i class="fas fa-check"></i> Calidad 4K Ultra HD & Full HD</li>
-            <li><i class="fas fa-check"></i> 12.000+ Series y Películas</li>
-            <li><i class="fas fa-check"></i> 180+ Canales en Vivo con EPG</li>
-            <li><i class="fas fa-check"></i> Acceso mundial sin restricciones</li>
-          </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 1 Mes</a>
-        </div>
-
-        <!-- Paquete 3 Meses USD (Trimestral) -->
-        <div class="price-plan-card" data-aos="zoom-in-up" data-aos-delay="100">
-          <span class="popular-ribbon" style="background:#0077b6;">Ahorro 20%</span>
-          <div class="plan-header-name">3 Meses</div>
-          <div class="plan-price-tag">
-            <sup>U$D</sup>29<sub>/3 meses</sub>
-          </div>
-          <p style="color:#10b981;font-weight:700;font-size:0.82rem;margin-top:-15px;margin-bottom:15px;">Equivale a U$D 9.67 / mes</p>
-          <ul class="plan-features-list">
-            <li><i class="fas fa-check"></i> 3 Pantallas simultáneas</li>
-            <li><i class="fas fa-check"></i> Calidad 4K Ultra HD + HDR</li>
-            <li><i class="fas fa-check"></i> Catálogo completo y estrenos</li>
-            <li><i class="fas fa-check"></i> Todos los canales de deportes en vivo</li>
-            <li><i class="fas fa-check"></i> Ahorras $7 USD vs mensual</li>
-          </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 3 Meses</a>
-        </div>
-
-        <!-- Paquete 6 Meses USD (Semestral) -->
-        <div class="price-plan-card" data-aos="zoom-in-up" data-aos-delay="200">
-          <span class="popular-ribbon" style="background:#e50914;">🔥 Más Popular</span>
-          <div class="plan-header-name">6 Meses</div>
-          <div class="plan-price-tag">
-            <sup>U$D</sup>49<sub>/6 meses</sub>
-          </div>
-          <p style="color:#10b981;font-weight:700;font-size:0.82rem;margin-top:-15px;margin-bottom:15px;">Equivale a U$D 8.17 / mes (Ahorro 32%)</p>
-          <ul class="plan-features-list">
-            <li><i class="fas fa-check"></i> 4 Pantallas simultáneas</li>
-            <li><i class="fas fa-check"></i> Calidad 4K HDR + Dolby Atmos</li>
-            <li><i class="fas fa-check"></i> Eventos PPV y Canales Premium</li>
-            <li><i class="fas fa-check"></i> Grabación en la nube (Cloud DVR)</li>
-            <li><i class="fas fa-check"></i> Ahorras $23 USD vs mensual</li>
-          </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 6 Meses</a>
-        </div>
-
-        <!-- Paquete 12 Meses USD (Anual - DESTACADO) -->
         <div class="price-plan-card highlighted" data-aos="zoom-in-up" data-aos-delay="300">
           <span class="popular-ribbon">👑 Mejor Valor · Ahorro 44%</span>
           <div class="plan-header-name">12 Meses (Anual)</div>
           <div class="plan-price-tag">
             <sup>U$D</sup>80<sub>/año</sub>
           </div>
-          <p style="color:var(--accent-gold);font-weight:700;font-size:0.85rem;margin-top:-15px;margin-bottom:15px;">¡Solo U$D 6.67 / mes!</p>
+          <p style="color:var(--accent-gold);font-weight:700;font-size:0.9rem;margin-top:-15px;margin-bottom:15px;">¡Solo U$D 6.67 / mes!</p>
           <ul class="plan-features-list">
             <li><i class="fas fa-check"></i> 4 Pantallas (+ 1 Pantalla Extra Gratis)</li>
-            <li><i class="fas fa-check"></i> Calidad 4K HDR nativa máxima</li>
-            <li><i class="fas fa-check"></i> Todos los canales, estrenos y PPV</li>
-            <li><i class="fas fa-check"></i> Tarifa congelada por 1 año</li>
-            <li><i class="fas fa-check"></i> Ahorras $64 USD frente al pago mes a mes</li>
+            <li><i class="fas fa-check"></i> Calidad 4K HDR nativa máxima sin compresión</li>
+            <li><i class="fas fa-check"></i> Todos los canales, estrenos y eventos VIP</li>
+            <li><i class="fas fa-check"></i> Tarifa fija congelada por 1 año completo</li>
+            <li><i class="fas fa-check"></i> ¡Ahorras $64 USD frente al pago mes a mes!</li>
+            <li><i class="fas fa-check"></i> Soporte VIP dedicado 24/7 por WhatsApp</li>
           </ul>
-          <a href="#contacto" class="btn-plan-select nav-anchor">Elegir 12 Meses</a>
+          <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20comprar%20el%20Paquete%20de%2012%20Meses%20($80%20USD)" target="_blank" class="btn-plan-select" style="background:#25d366;border-color:#25d366;color:#fff;font-weight:900;">
+            <i class="fab fa-whatsapp"></i> Comprar Paquete
+          </a>
         </div>
 
       </div>
@@ -2699,10 +2655,12 @@
           </div>
 
           <div class="contact-item-row">
-            <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-item-icon"><i class="fab fa-whatsapp" style="color:#25d366;"></i></div>
             <div class="contact-item-text">
-              <strong>WhatsApp Directo</strong>
-              <span>+54 9 11 0000-0000 (Atención Inmediata)</span>
+              <strong>WhatsApp Business Oficial</strong>
+              <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20comprar%20un%20paquete%20de%20streaming" target="_blank" style="color:#25d366;font-weight:700;font-size:1.05rem;">
+                +1 (904) 229-9760 <span style="font-size:0.8rem;background:rgba(37,211,102,0.15);padding:2px 8px;border-radius:12px;margin-left:5px;">Chat Directo</span>
+              </a>
             </div>
           </div>
 
@@ -2729,12 +2687,12 @@
             </div>
 
             <div class="form-group-field">
-              <label for="selPlan">Paquete de Interés</label>
+              <label for="selPlan">Paquete de Interés (USD)</label>
               <select id="selPlan">
-                <option value="Paquete 12 Meses (Anual - $80)">Paquete 12 Meses (Anual - $80 USD / $98.900 ARS - Mejor Valor)</option>
-                <option value="Paquete 6 Meses (Semestral - $49)">Paquete 6 Meses (Semestral - $49 USD / $59.900 ARS - Más Popular)</option>
-                <option value="Paquete 3 Meses (Trimestral - $29)">Paquete 3 Meses (Trimestral - $29 USD / $35.900 ARS)</option>
-                <option value="Paquete 1 Mes (Prueba - $12)">Paquete 1 Mes (Prueba - $12 USD / $14.900 ARS)</option>
+                <option value="Paquete 12 Meses ($80 USD)">Paquete 12 Meses ($80 USD - Mejor Valor)</option>
+                <option value="Paquete 6 Meses ($49 USD)">Paquete 6 Meses ($49 USD - Más Popular)</option>
+                <option value="Paquete 3 Meses ($29 USD)">Paquete 3 Meses ($29 USD)</option>
+                <option value="Paquete 1 Mes ($12 USD)">Paquete 1 Mes ($12 USD - Prueba)</option>
                 <option value="Demo Gratuita">Solicitar Demo Gratuita</option>
               </select>
             </div>
@@ -2744,8 +2702,8 @@
               <textarea id="txtMsg" placeholder="Contanos qué dispositivos tenés o qué consulta querés realizar..."></textarea>
             </div>
 
-            <button type="submit" class="btn-submit-contact">
-              <i class="fas fa-paper-plane" style="margin-right:8px;"></i> Enviar Solicitud
+            <button type="submit" class="btn-submit-contact" style="background:#25d366;border-color:#25d366;">
+              <i class="fab fa-whatsapp" style="margin-right:8px;font-size:1.2rem;"></i> Comprar / Chatear por WhatsApp
             </button>
           </form>
         </div>
@@ -2776,7 +2734,7 @@
           <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
 
@@ -2816,12 +2774,12 @@
 
         <div class="footer-col" data-aos="fade-left">
           <h4>Medios de Pago</h4>
-          <p>Aboná en pesos argentinos o dólares:</p>
+          <p>Aboná en dólares (USD) con tus métodos preferidos:</p>
           <div class="payment-tags-wrap">
             <span class="pay-tag"><i class="fas fa-credit-card"></i> Tarjetas Débito / Crédito</span>
-            <span class="pay-tag"><i class="fas fa-money-bill-wave"></i> Mercado Pago / Transferencia</span>
             <span class="pay-tag"><i class="fab fa-paypal"></i> PayPal</span>
-            <span class="pay-tag"><i class="fas fa-store"></i> Pago Fácil / RapiPago</span>
+            <span class="pay-tag"><i class="fas fa-money-bill-wave"></i> Transferencia / Zelle</span>
+            <span class="pay-tag"><i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp Pay</span>
           </div>
         </div>
 
@@ -2838,6 +2796,11 @@
   <!-- Botón Volver Arriba -->
   <a href="#home" id="btnToTop" class="nav-anchor" aria-label="Volver Arriba">
     <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- Botón Flotante WhatsApp Business -->
+  <a href="https://wa.me/19042299760?text=Hola%20AMERICA%20Streaming,%20deseo%20consultar%20por%20los%20paquetes%20de%20streaming" target="_blank" id="btnWhatsAppFloat" aria-label="Chat WhatsApp">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- ==========================================================================
@@ -3002,7 +2965,12 @@
     // Manejadores de Formularios
     function handleContactSubmit(e) {
       e.preventDefault();
-      alert('¡Gracias por contactarnos! Tu solicitud fue registrada con éxito. Un asesor técnico se comunicará con vos en breve.');
+      const name = document.getElementById('txtName').value;
+      const email = document.getElementById('txtEmail').value;
+      const plan = document.getElementById('selPlan').value;
+      const msg = document.getElementById('txtMsg').value;
+      const waMsg = encodeURIComponent(`Hola AMERICA Streaming, mi nombre es ${name} (${email}). Deseo comprar o consultar sobre el: ${plan}.${msg ? ' Mensaje: ' + msg : ''}`);
+      window.open(`https://wa.me/19042299760?text=${waMsg}`, '_blank');
       e.target.reset();
     }
 
