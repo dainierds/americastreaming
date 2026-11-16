@@ -1,0 +1,3003 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AMERICA Streaming | Series, Películas y Canales de TV en Vivo en 4K</title>
+  <meta name="description" content="La mejor plataforma de streaming de series, películas y televisión en vivo en Argentina y Latinoamérica. Calidad 4K Ultra HD sin interrupciones." />
+  <meta name="keywords" content="streaming series, peliculas online, canales de tv en vivo, iptv argentina, streaming 4k, américa streaming, ver television por internet" />
+
+  <!-- Google Fonts: Source Sans Pro & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS (Animate On Scroll) Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    /* ==========================================================================
+       VARIABLES Y RESET GLOBAL
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #e50914;
+      --primary-hover: #b80710;
+      --primary-light: rgba(229, 9, 20, 0.08);
+      --accent-gold: #ffb703;
+      --accent-blue: #0077b6;
+      --dark-hero: #0c0d14;
+      --dark-card: #151724;
+      --white-pure: #ffffff;
+      --bg-light: #f8fafd;
+      --bg-card: #ffffff;
+      --text-main: #212529;
+      --text-muted: #64748b;
+      --border-soft: #e2e8f0;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 35px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: var(--text-main);
+      background-color: var(--white-pure);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 12px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ==========================================================================
+       BARRA DE NAVEGACIÓN SUPERIOR (STICKY + BLUR AL HACER SCROLL)
+       ========================================================================== */
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+      background: linear-gradient(180deg, rgba(12, 13, 20, 0.8) 0%, rgba(12, 13, 20, 0) 100%);
+    }
+
+    .main-header.navScrolled {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 12px 45px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), #9b0007);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.35rem;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    }
+
+    .brand-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      transition: var(--transition);
+    }
+
+    .brand-text span {
+      color: var(--primary);
+    }
+
+    .main-header.navScrolled .brand-text {
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .nav-links li a {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: var(--transition);
+    }
+
+    .main-header.navScrolled .nav-links li a {
+      color: var(--text-main);
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: var(--primary);
+    }
+
+    .btn-header-login {
+      background: var(--primary);
+      color: #ffffff !important;
+      padding: 9px 24px !important;
+      border-radius: 50px !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 14px rgba(229, 9, 20, 0.35);
+    }
+
+    .btn-header-login:hover {
+      background: var(--primary-hover) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(229, 9, 20, 0.5);
+    }
+
+    /* Menú Hamburguesa para Móvil */
+    .menu-toggle-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .menu-toggle-btn span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: #ffffff;
+      margin: 5px 0;
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    .main-header.navScrolled .menu-toggle-btn span {
+      background: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PORTADA / HERO (NUEVA PORTADA CINEMATOGRÁFICA)
+       ========================================================================== */
+    .hero-banner {
+      min-height: 100vh;
+      background: radial-gradient(circle at 75% 30%, rgba(229, 9, 20, 0.15) 0%, transparent 50%),
+                  linear-gradient(135deg, #07080e 0%, #10121d 60%, #151829 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;
+      padding-bottom: 70px;
+      overflow: hidden;
+    }
+
+    /* Partículas de fondo sutiles */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.6;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(229, 9, 20, 0.15);
+      border: 1px solid rgba(229, 9, 20, 0.4);
+      color: #ff4d58;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7);
+      animation: livePulse 1.6s infinite;
+    }
+
+    @keyframes livePulse {
+      0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.2vw, 4.3rem);
+      line-height: 1.12;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 22px;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #ff6b72 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title .highlight-red {
+      color: var(--primary);
+      -webkit-text-fill-color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: #b3b9c9;
+      line-height: 1.7;
+      margin-bottom: 38px;
+      max-width: 560px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .btn-hero-main {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 30px rgba(229, 9, 20, 0.45);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-hero-main:hover {
+      background: var(--primary-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(229, 9, 20, 0.6);
+      color: #fff;
+    }
+
+    .btn-hero-ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-hero-ghost:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #ffffff;
+      transform: translateY(-3px);
+      color: #fff;
+    }
+
+    /* Resumen de características en números */
+    .hero-stats {
+      display: flex;
+      gap: 35px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 25px;
+    }
+
+    .hero-stat-item h3 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .hero-stat-item p {
+      font-size: 0.82rem;
+      color: #8f9bb3;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* Maqueta del Reproductor Interactivo (Hero Right) */
+    .hero-visual-col {
+      position: relative;
+    }
+
+    .player-mockup-wrapper {
+      position: relative;
+      background: #111422;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(229, 9, 20, 0.15);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .player-screen {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(145deg, #181b2e 0%, #0d0f1a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .player-bg-art {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(229, 9, 20, 0.25) 0%, transparent 70%),
+                  linear-gradient(to top, rgba(7, 8, 14, 0.95) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .floating-channel-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      padding: 6px 14px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 3;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .floating-quality-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--accent-gold);
+      color: #0c0d14;
+      font-weight: 900;
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      z-index: 3;
+    }
+
+    .big-play-trigger {
+      width: 76px;
+      height: 76px;
+      background: rgba(229, 9, 20, 0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 2rem;
+      cursor: pointer;
+      position: relative;
+      z-index: 3;
+      transition: var(--transition);
+      box-shadow: 0 0 30px rgba(229, 9, 20, 0.6);
+    }
+
+    .big-play-trigger:hover {
+      transform: scale(1.1);
+      background: var(--primary);
+    }
+
+    .now-playing-info {
+      position: absolute;
+      bottom: 14px;
+      left: 16px;
+      right: 16px;
+      z-index: 3;
+    }
+
+    .now-playing-info h4 {
+      color: #ffffff;
+      font-size: 1.05rem;
+      margin-bottom: 2px;
+    }
+
+    .now-playing-info p {
+      color: #94a3b8;
+      font-size: 0.78rem;
+    }
+
+    .player-bottom-bar {
+      padding: 16px 20px;
+      background: #0d0f1a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .player-progress-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .player-progress-track {
+      flex: 1;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .player-progress-fill {
+      width: 62%;
+      height: 100%;
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    .player-time-label {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-family: monospace;
+    }
+
+    .player-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .player-ctrls-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #cbd5e1;
+      font-size: 1rem;
+    }
+
+    .player-ctrls-left i,
+    .player-ctrls-right i {
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .player-ctrls-left i:hover,
+    .player-ctrls-right i:hover {
+      color: var(--primary);
+    }
+
+    /* Floating card exterior */
+    .hero-floating-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 14px 20px;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 4;
+      animation: floatWidget 4s ease-in-out infinite;
+    }
+
+    @keyframes floatWidget {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-floating-card .thumb-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .hero-floating-card .info strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.9rem;
+    }
+
+    .hero-floating-card .info span {
+      color: #10b981;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       SECCIÓN 1 (SCROLL): BLANCO PURO - COMPATIBILIDAD CON DISPOSITIVOS
+       ========================================================================== */
+    .devices-bar-section {
+      background: var(--white-pure);
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .devices-bar-title {
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .devices-icon-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .device-box {
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .device-box:hover {
+      transform: translateY(-6px);
+    }
+
+    .device-box i {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 8px;
+      transition: var(--transition);
+    }
+
+    .device-box span {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .dev-win { color: #00a4ef; }
+    .dev-apple { color: #555555; }
+    .dev-android { color: #3ddc84; }
+    .dev-tv { color: var(--primary); }
+    .dev-fire { color: #ff9900; }
+    .dev-roku { color: #662d91; }
+    .dev-chrome { color: #4285f4; }
+
+    /* ==========================================================================
+       SECCIÓN 2 (SCROLL): BLANCO PURO - CARTELERA / CONTENIDO DESTACADO
+       ========================================================================== */
+    .catalog-section {
+      padding: 95px 0;
+      background: var(--white-pure);
+    }
+
+    .catalog-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 45px;
+      flex-wrap: wrap;
+    }
+
+    .catalog-tab-btn {
+      background: var(--bg-light);
+      border: 1px solid var(--border-soft);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .catalog-tab-btn:hover,
+    .catalog-tab-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.25);
+    }
+
+    .catalog-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .media-card {
+      background: var(--white-pure);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .media-poster-box {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .media-tag-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .tag-series { background: #6366f1; }
+    .tag-movie { background: var(--primary); }
+    .tag-tv { background: #10b981; }
+
+    .media-res-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--accent-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      z-index: 2;
+    }
+
+    .media-overlay-play {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .media-card:hover .media-overlay-play {
+      opacity: 1;
+    }
+
+    .media-play-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+    }
+
+    .media-info-box {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .media-info-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .media-meta-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .media-meta-line .rating {
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .media-info-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECCIÓN 3 (SCROLL): BLANCO PURO - PRESTACIONES / BENEFICIOS DEL SERVICIO
+       (ESTILO IDÉNTICO A LA REFERENCIA: 3 CARDS ICON1, ICON2, ICON3)
+       ========================================================================== */
+    .servicio-section {
+      padding: 95px 0;
+      background: var(--white-pure);
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .servicio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .f1-card {
+      background: var(--white-pure);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .f1-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease;
+    }
+
+    .f1-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .f1-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .f1-icon-wrap {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      transition: var(--transition);
+    }
+
+    .f1-card:hover .f1-icon-wrap {
+      transform: scale(1.1);
+    }
+
+    .icon-stream { background: rgba(229, 9, 20, 0.1); color: var(--primary); }
+    .icon-player { background: rgba(0, 119, 182, 0.1); color: var(--accent-blue); }
+    .icon-support { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+
+    .f1-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .f1-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       SECCIÓN 4: QUOTE (FRASE DESTACADA - MISMO ESTILO QUE LA REFERENCIA)
+       ========================================================================== */
+    .quote-section {
+      background: var(--bg-light);
+      padding: 70px 0;
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .quote-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .quote-content h4 {
+      flex: 1;
+      min-width: 300px;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .quote-btn-wrap a {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 15px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+    }
+
+    .quote-btn-wrap a:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(229, 9, 20, 0.45);
+    }
+
+    /* ==========================================================================
+       SECCIÓN 5 (SCROLL): BLANCO PURO - NOSOTROS & TECNOLOGÍA DE AVANZADA
+       (ESTILO IDÉNTICO A LA REFERENCIA: 2 FILAS INTERCALADAS)
+       ========================================================================== */
+    .process-section {
+      padding: 95px 0;
+      background: var(--white-pure);
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 85px;
+    }
+
+    .process-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .process-text h4 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    .process-text p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .process-visual-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-soft);
+      position: relative;
+    }
+
+    /* Simulación visual de red de servidores CDN */
+    .cdn-visual-art {
+      background: linear-gradient(135deg, #0e111e 0%, #1a1e36 100%);
+      padding: 35px 25px;
+      color: #ffffff;
+    }
+
+    .cdn-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+
+    .cdn-header span {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-family: monospace;
+    }
+
+    .cdn-nodes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .cdn-node-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px;
+      border-radius: 8px;
+    }
+
+    .cdn-node-card strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #ffffff;
+    }
+
+    .cdn-node-card small {
+      color: #10b981;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    /* Canales en Vivo Live Visual */
+    .live-epg-box {
+      background: #0d0f1a;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .epg-channel-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .epg-ch-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .epg-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: livePulse 1.5s infinite;
+    }
+
+    .epg-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .epg-category {
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    .btn-watch-epg {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       SECCIÓN 6: PRECIOS (MISMO ESTILO QUE LA REFERENCIA CON PESTAÑAS ARS / USD)
+       ========================================================================== */
+    .precios-section {
+      background: var(--bg-light);
+      padding: 95px 0;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .pricing-currency-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      background: #e2e8f0;
+      padding: 5px;
+      border-radius: 50px;
+      width: fit-content;
+      margin: 0 auto 50px;
+    }
+
+    .currency-btn {
+      padding: 10px 28px;
+      border-radius: 50px;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      background: transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .currency-btn.active {
+      background: var(--white-pure);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pricing-table-grid {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 26px;
+    }
+
+    .pricing-table-grid.active {
+      display: grid;
+    }
+
+    .price-plan-card {
+      background: var(--white-pure);
+      border-radius: var(--radius);
+      padding: 38px 26px;
+      text-align: center;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .price-plan-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .price-plan-card.highlighted {
+      background: linear-gradient(145deg, #101322 0%, #181d33 100%);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .popular-ribbon {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #ffffff;
+      padding: 5px 18px;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+    }
+
+    .plan-header-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .price-plan-card.highlighted .plan-header-name {
+      color: var(--accent-gold);
+    }
+
+    .plan-price-tag {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 22px;
+      line-height: 1;
+    }
+
+    .price-plan-card.highlighted .plan-price-tag {
+      color: #ffffff;
+    }
+
+    .plan-price-tag sup {
+      font-size: 1.2rem;
+      vertical-align: top;
+      margin-right: 3px;
+    }
+
+    .plan-price-tag sub {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .price-plan-card.highlighted .plan-price-tag sub {
+      color: #94a3b8;
+    }
+
+    .plan-features-list {
+      list-style: none;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .plan-features-list li {
+      font-size: 0.9rem;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .price-plan-card.highlighted .plan-features-list li {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+    }
+
+    .plan-features-list li i {
+      color: #10b981;
+      font-size: 0.85rem;
+    }
+
+    .btn-plan-select {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-align: center;
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-plan-select:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .price-plan-card.highlighted .btn-plan-select {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .price-plan-card.highlighted .btn-plan-select:hover {
+      background: #ffffff;
+      color: var(--primary);
+      border-color: #ffffff;
+    }
+
+    /* ==========================================================================
+       SECCIÓN 7 (SCROLL): BLANCO PURO - PREGUNTAS FRECUENTES (FAQ)
+       (MISMO ESTILO QUE LA REFERENCIA: DOS COLUMNAS CON ANIMACIÓN FLIP)
+       ========================================================================== */
+    .faq-section {
+      padding: 95px 0;
+      background: var(--white-pure);
+    }
+
+    .faq-columns-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .faq-item-card {
+      background: var(--white-pure);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .faq-item-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .faq-item-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item-card h4 i {
+      color: var(--primary);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .faq-item-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       SECCIÓN 8: TESTIMONIOS / RAZONES (FONDO CLARO)
+       ========================================================================== */
+    .testimonials-section {
+      background: var(--bg-light);
+      padding: 90px 0;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testi-card {
+      background: var(--white-pure);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 35px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .testi-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .testi-stars {
+      color: var(--accent-gold);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .testi-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .testi-name strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    .testi-name span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SECCIÓN 9 (SCROLL): BLANCO PURO - FORMULARIO DE CONTACTO
+       ========================================================================== */
+    .contact-section {
+      padding: 95px 0;
+      background: var(--white-pure);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info-col h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .contact-info-col p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .contact-item-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    .contact-item-text span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-form-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-soft);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-group-field {
+      margin-bottom: 20px;
+    }
+
+    .form-group-field label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .form-group-field input,
+    .form-group-field select,
+    .form-group-field textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: var(--white-pure);
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .form-group-field input:focus,
+    .form-group-field select:focus,
+    .form-group-field textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15);
+    }
+
+    .form-group-field textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .btn-submit-contact {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.35);
+    }
+
+    .btn-submit-contact:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
+    }
+
+    /* ==========================================================================
+       FOOTER (MISMO ESTILO QUE LA REFERENCIA: MULTI-COLUMNAS + MEDIOS DE PAGO)
+       ========================================================================== */
+    footer {
+      background: #0d0f18;
+      color: #94a3b8;
+      padding-top: 75px;
+    }
+
+    .footer-brand-box {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 55px;
+    }
+
+    .footer-brand-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand-box p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .footer-social-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .footer-social-row a {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-social-row a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-columns-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 45px;
+      padding-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .footer-col p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .payment-tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pay-tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pay-tag i {
+      font-size: 1.15rem;
+    }
+
+    .copyright-footer-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    .copyright-footer-bar a {
+      color: var(--primary);
+    }
+
+    /* Botón flotante Volver Arriba */
+    #btnToTop {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    #btnToTop.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #btnToTop:hover {
+      background: var(--primary-hover);
+      transform: translateY(-4px);
+    }
+
+    /* ==========================================================================
+       VENTANAS MODALES (DEMO REAL DE VIDEO & LOGIN)
+       ========================================================================== */
+    .app-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 10, 18, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .app-modal-backdrop.active {
+      display: flex;
+    }
+
+    .app-modal-dialog {
+      background: var(--white-pure);
+      width: 100%;
+      max-width: 650px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+      from { opacity: 0; transform: scale(0.92) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-head h4 {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-close-trigger {
+      background: transparent;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      transition: var(--transition);
+    }
+
+    .modal-close-trigger:hover {
+      color: var(--primary);
+    }
+
+    .modal-inner-content {
+      padding: 24px;
+    }
+
+    .modal-foot {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border-soft);
+      text-align: right;
+    }
+
+    .btn-modal-close-neutral {
+      background: #64748b;
+      color: #ffffff;
+      padding: 9px 22px;
+      border-radius: 6px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+      }
+
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta-group,
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual-col {
+        max-width: 550px;
+        margin: 0 auto;
+      }
+
+      .process-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-header {
+        padding: 16px 24px;
+      }
+
+      .menu-toggle-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 12, 20, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 999;
+      }
+
+      .nav-links.mobileOpen {
+        display: flex;
+      }
+
+      .nav-links li a {
+        font-size: 1.25rem;
+      }
+
+      .faq-columns-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .devices-icon-grid {
+        gap: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN SUPERIOR
+       ========================================================================== -->
+  <header class="main-header" id="navbar">
+    <a href="#home" class="brand-logo">
+      <div class="brand-icon">
+        <i class="fas fa-play"></i>
+      </div>
+      <div class="brand-text">
+        AMERICA <span>Streaming</span>
+      </div>
+    </a>
+
+    <button class="menu-toggle-btn" id="menuToggle" aria-label="Abrir Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-anchor active">Inicio</a></li>
+      <li><a href="#catalogo" class="nav-anchor">Catálogo</a></li>
+      <li><a href="#servicio" class="nav-anchor">Servicio</a></li>
+      <li><a href="#nosotros" class="nav-anchor">Nosotros</a></li>
+      <li><a href="#precios" class="nav-anchor">Precios</a></li>
+      <li><a href="#preguntas" class="nav-anchor">FAQ</a></li>
+      <li><a href="#contacto" class="nav-anchor">Contacto</a></li>
+      <li><a href="javascript:void(0)" class="btn-header-login" onclick="openAppModal('loginModal')">Ingresar</a></li>
+    </ul>
+  </header>
+
+  <!-- ==========================================================================
+       PORTADA HERO (NUEVA PORTADA DE STREAMING DE SERIES, PELÍCULAS Y TV)
+       ========================================================================== -->
+  <section class="hero-banner" id="home">
+    <div class="hero-particles"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Columna Izquierda: Información de Entrada -->
+        <div class="hero-info-col">
+          <div class="hero-badge-live" data-aos="fade-down" data-aos-duration="800">
+            <span class="pulse-dot"></span>
+            Transmisión en Vivo · 4K Ultra HD
+          </div>
+
+          <h1 class="hero-title" data-aos="fade-right" data-aos-duration="1000">
+            Series, Películas y <span class="highlight-red">TV en Vivo</span> sin límites
+          </h1>
+
+          <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">
+            Accedé a más de 12.000 títulos en máxima resolución y a más de 180 canales de televisión en directo las 24 horas, desde cualquier pantalla y con la menor latencia.
+          </p>
+
+          <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="300">
+            <a href="#precios" class="btn-hero-main nav-anchor">
+              <i class="fas fa-rocket"></i> Ver Planes y Precios
+            </a>
+            <a href="javascript:void(0)" class="btn-hero-ghost" onclick="openAppModal('videoDemoModal')">
+              <i class="fas fa-play-circle"></i> Probar Demo en Vivo
+            </a>
+          </div>
+
+          <!-- Métricas del servicio -->
+          <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+            <div class="hero-stat-item">
+              <h3>12.000+</h3>
+              <p>Series y Películas</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>180+</h3>
+              <p>Canales TV en Vivo</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>4K HDR</h3>
+              <p>Calidad Suprema</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>99.9%</h3>
+              <p>Uptime Garantizado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Reproductor / Mockup Interactivo -->
+        <div class="hero-visual-col" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="player-mockup-wrapper">
+            <div class="player-screen">
+              <div class="player-bg-art"></div>
+              
+              <div class="floating-channel-badge">
+                <i class="fas fa-satellite-dish" style="color:var(--primary);"></i>
+                HBO Max HD · En Vivo
+              </div>
+
+              <div class="floating-quality-badge">
+                4K DOLBY
+              </div>
+
+              <div class="big-play-trigger" onclick="openAppModal('videoDemoModal')">
+                <i class="fas fa-play"></i>
+              </div>
+
+              <div class="now-playing-info">
+                <h4>House of the Dragon</h4>
+                <p>Temporada 2 · Episodio 8 (Transmisión Simultánea)</p>
+              </div>
+            </div>
+
+            <!-- Barra de Controles Inferior -->
+            <div class="player-bottom-bar">
+              <div class="player-progress-container">
+                <div class="player-progress-track">
+                  <div class="player-progress-fill"></div>
+                </div>
+                <span class="player-time-label">42:15 / 65:00</span>
+              </div>
+
+              <div class="player-actions-row">
+                <div class="player-ctrls-left">
+                  <i class="fas fa-backward-step"></i>
+                  <i class="fas fa-pause" style="color:var(--primary);"></i>
+                  <i class="fas fa-forward-step"></i>
+                  <i class="fas fa-volume-high"></i>
+                </div>
+                <div class="player-ctrls-right" style="color:#cbd5e1;">
+                  <i class="fas fa-sliders" style="margin-right:12px;"></i>
+                  <i class="fas fa-expand"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta Flotante Decorativa -->
+          <div class="hero-floating-card">
+            <div class="thumb-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="info">
+              <strong>Servidores Ultra Rápidos</strong>
+              <span>Conexión 10 Gbps Activa</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 1 (SCROLL): BLANCO PURO - COMPATIBILIDAD DE DISPOSITIVOS
+       ========================================================================== -->
+  <section class="devices-bar-section">
+    <div class="container">
+      <h3 class="devices-bar-title" data-aos="fade-down">
+        Compatible con todos los sistemas y pantallas
+      </h3>
+
+      <ul class="devices-icon-grid">
+        <li class="device-box" data-aos="fade-up" data-aos-delay="50">
+          <i class="fas fa-tv dev-tv"></i>
+          <span>Smart TV</span>
+        </li>
+        <li class="device-box" data-aos="fade-up" data-aos-delay="100">
+          <i class="fab fa-android dev-android"></i>
+          <span>Android TV</span>
+        </li>
+        <li class="device-box" data-aos="fade-up" data-aos-delay="150">
+          <i class="fab fa-apple dev-apple"></i>
+          <span>Apple / iOS</span>
+        </li>
+        <li class="device-box" data-aos="fade-up" data-aos-delay="200">
+          <i class="fab fa-windows dev-win"></i>
+          <span>Windows</span>
+        </li>
+        <li class="device-box" data-aos="fade-up" data-aos-delay="250">
+          <i class="fab fa-amazon dev-fire"></i>
+          <span>Fire TV Stick</span>
+        </li>
+        <li class="device-box" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-satellite dev-roku"></i>
+          <span>Roku / Mag</span>
+        </li>
+        <li class="device-box" data-aos="fade-up" data-aos-delay="350">
+          <i class="fab fa-chrome dev-chrome"></i>
+          <span>Navegadores</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 2 (SCROLL): BLANCO PURO - CARTELERA Y CONTENIDO DESTACADO
+       ========================================================================== -->
+  <section class="catalog-section" id="catalogo">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-in">
+        <h2>Catálogo en Constante Estreno</h2>
+        <p>Series completas, películas taquilleras y las principales señales de TV en vivo con actualización automática continua.</p>
+      </div>
+
+      <!-- Filtros interactivos -->
+      <div class="catalog-filter-tabs" data-aos="fade-up">
+        <button class="catalog-tab-btn active" onclick="filterCatalog('todos', this)">Todos</button>
+        <button class="catalog-tab-btn" onclick="filterCatalog('series', this)">Series Exclusivas</button>
+        <button class="catalog-tab-btn" onclick="filterCatalog('peliculas', this)">Películas Estreno</button>
+        <button class="catalog-tab-btn" onclick="filterCatalog('tv', this)">Canales de TV en Vivo</button>
+      </div>
+
+      <!-- Cuadrícula de Contenido -->
+      <div class="catalog-cards-grid">
+
+        <!-- Card 1: Serie -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="100">
+          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #1b263b, #0d1b2a);">
+            <span class="media-tag-badge tag-series">Serie</span>
+            <span class="media-res-badge">4K HDR</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Crónicas de la Galaxia</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-star"></i> 9.4</span>
+                <span>3 Temporadas</span>
+                <span>Ciencia Ficción</span>
+              </div>
+              <p>Una expedición más allá de las fronteras conocidas desafía los límites del espacio y el tiempo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Película -->
+        <div class="media-card" data-category="peliculas" data-aos="fade-up" data-aos-delay="150">
+          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #780000, #003049);">
+            <span class="media-tag-badge tag-movie">Película</span>
+            <span class="media-res-badge">4K ULTRA</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>El Asedio Final</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-star"></i> 8.9</span>
+                <span>2h 18min</span>
+                <span>Acción / Thriller</span>
+              </div>
+              <p>Un equipo de élite debe recuperar una clave secreta antes de que caiga en manos enemigas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: TV en Vivo -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="200">
+          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #0077b6, #03045e);">
+            <span class="media-tag-badge tag-tv">Canal TV</span>
+            <span class="media-res-badge">EN VIVO</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Deportes Premium 1 HD</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>Fútbol Internacional</span>
+              </div>
+              <p>Partidos en directo de las ligas más importantes del mundo, Libertadores y Champions League.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Serie -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="250">
+          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #2b2d42, #8d99ae);">
+            <span class="media-tag-badge tag-series">Serie</span>
+            <span class="media-res-badge">1080p FHD</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Sombras en la Ciudad</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-star"></i> 9.1</span>
+                <span>5 Temporadas</span>
+                <span>Crimen / Drama</span>
+              </div>
+              <p>Investigaciones complejas en un submundo nocturno donde nadie es quien dice ser.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 3 (SCROLL): BLANCO PURO - PRESTACIONES PARA SU TRANSMISIÓN
+       (MISMO ESTILO VISUAL DE 3 CARDS DE LA REFERENCIA ORIGINAL)
+       ========================================================================== -->
+  <section class="servicio-section" id="servicio">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-in">
+        <h2>Prestaciones para su entretenimiento</h2>
+        <p>Infraestructura robusta diseñada para garantizar fluidez, máxima definición y la mayor compatibilidad técnica.</p>
+      </div>
+
+      <div class="servicio-grid">
+
+        <!-- Card 1 -->
+        <div class="f1-card" data-aos="fade-right">
+          <div class="f1-icon-wrap icon-stream">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3>Panel & Guía EPG</h3>
+          <p>
+            Guía electrónica de programación (EPG) actualizada en tiempo real para no perderte ningún programa, evento deportivo o estreno en vivo.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="f1-card" data-aos="fade-up">
+          <div class="f1-icon-wrap icon-player">
+            <i class="fas fa-play-circle"></i>
+          </div>
+          <h3>Reproductor Adaptativo</h3>
+          <p>
+            Transmisión inteligente desarrollada en HTML5 y H.265. Se adapta dinámicamente a tu conexión a internet para evitar cortes y buffering.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="f1-card" data-aos="fade-left">
+          <div class="f1-icon-wrap icon-support">
+            <i class="far fa-life-ring"></i>
+          </div>
+          <h3>Soporte Técnico 24/7</h3>
+          <p>
+            Respaldo y asesoramiento técnico profesional continuo a cargo de especialistas en servidores de video streaming y conectividad CDN.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 4: QUOTE (ESTILO IDÉNTICO A LA REFERENCIA ORIGINAL)
+       ========================================================================== */
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-content" data-aos="fade-up">
+        <h4>
+          La forma más rápida y simple de tener todo el entretenimiento en tu hogar con la mejor calidad de imagen y al mejor precio del mercado.
+        </h4>
+        <div class="quote-btn-wrap" data-aos="flip-left">
+          <a href="#contacto" class="nav-anchor">Empiece ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 5 (SCROLL): BLANCO PURO - NOSOTROS Y TECNOLOGÍA
+       (MISMO ESTILO DE LA REFERENCIA: 2 FILAS INTERCALADAS)
+       ========================================================================== -->
+  <section class="process-section" id="nosotros">
+    <div class="container">
+
+      <!-- Fila 1: Estabilidad y Conectividad -->
+      <div class="process-row">
+        <div class="process-text" data-aos="fade-right">
+          <h4>Estabilidad y Conectividad con Tecnología de Avanzada</h4>
+          <p>
+            Contamos con el respaldo de potentes servidores redundantes de última generación alojados en centros de datos con enlaces directos de fibra óptica de hasta 10 Gbps, garantizando fluidez absoluta las 24 horas, los 365 días del año.
+          </p>
+          <p>
+            Implementamos codificación H.265 / HEVC de alta eficiencia, lo que permite ofrecer resolución 4K Ultra HD consumiendo la mitad del ancho de banda habitual, optimizando el rendimiento incluso en conexiones domésticas estándar.
+          </p>
+        </div>
+
+        <div class="process-visual-box" data-aos="fade-left">
+          <div class="cdn-visual-art">
+            <div class="cdn-header">
+              <strong>AMERICA Streaming CDN Network</strong>
+              <span><i class="fas fa-circle" style="color:#10b981;font-size:0.6rem;"></i> ONLINE</span>
+            </div>
+            <div class="cdn-nodes-grid">
+              <div class="cdn-node-card">
+                <strong>Servidor Buenos Aires</strong>
+                <small>Latencia: 8ms · 99.98%</small>
+              </div>
+              <div class="cdn-node-card">
+                <strong>Servidor San Pablo</strong>
+                <small>Latencia: 15ms · 100%</small>
+              </div>
+              <div class="cdn-node-card">
+                <strong>Servidor Miami</strong>
+                <small>Latencia: 42ms · 99.99%</small>
+              </div>
+              <div class="cdn-node-card">
+                <strong>Servidor Frankfurt</strong>
+                <small>Latencia: 85ms · 100%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 2: Acerca de Nosotros (Invertida) -->
+      <div class="process-row" style="margin-bottom:0;">
+        <div class="process-visual-box" data-aos="fade-right">
+          <div class="live-epg-box">
+            <div class="epg-channel-item">
+              <div class="epg-ch-info">
+                <span class="epg-dot"></span>
+                <div>
+                  <div class="epg-title">Cinecanal 4K</div>
+                  <div class="epg-category">Películas Taquilleras</div>
+                </div>
+              </div>
+              <span class="btn-watch-epg">EN VIVO</span>
+            </div>
+
+            <div class="epg-channel-item">
+              <div class="epg-ch-info">
+                <span class="epg-dot"></span>
+                <div>
+                  <div class="epg-title">ESPN Premium</div>
+                  <div class="epg-category">Fútbol & Deportes</div>
+                </div>
+              </div>
+              <span class="btn-watch-epg">EN VIVO</span>
+            </div>
+
+            <div class="epg-channel-item">
+              <div class="epg-ch-info">
+                <span class="epg-dot"></span>
+                <div>
+                  <div class="epg-title">Discovery World HD</div>
+                  <div class="epg-category">Documentales</div>
+                </div>
+              </div>
+              <span class="btn-watch-epg">EN VIVO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-text" data-aos="fade-left">
+          <h4>Acerca de Nosotros</h4>
+          <p>
+            Somos una empresa con proyección internacional líder en la provisión de servicios de streaming y distribución de video online. Brindamos verdaderas soluciones a nuestros suscriptores con atención humana personalizada y soporte inmediato.
+          </p>
+          <p>
+            En AMERICA Streaming™ aplicamos "Soluciones Profesionales Simples": fácil de contratar, fácil de instalar en cualquier dispositivo y sin ataduras ni contratos de permanencia.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 6: TABLA DE PRECIOS CON PESTAÑAS ARS / USD
+       (MISMO SISTEMA DE PESTAÑAS Y TARJETAS BLANCAS DE LA REFERENCIA ORIGINAL)
+       ========================================================================== -->
+  <section class="precios-section" id="precios">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-in">
+        <h2>Elija su plan</h2>
+        <p>Planes flexibles que se adaptan a tus necesidades de entretenimiento sin costos ocultos.</p>
+      </div>
+
+      <!-- Selector de Moneda -->
+      <div class="pricing-currency-tabs" data-aos="fade-up">
+        <button class="currency-btn active" onclick="switchCurrency('ars', this)">Pesos AR</button>
+        <button class="currency-btn" onclick="switchCurrency('usd', this)">Dólares US</button>
+      </div>
+
+      <!-- Planes en Pesos Argentinos (ARS) -->
+      <div class="pricing-table-grid active" id="pricing-ars">
+        
+        <!-- Plan Básico -->
+        <div class="price-plan-card" data-aos="zoom-in-up">
+          <div class="plan-header-name">Plan Básico</div>
+          <div class="plan-price-tag">
+            <sup>$</sup>8.900<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 1 Pantalla simultánea</li>
+            <li><i class="fas fa-check"></i> Calidad Full HD 1080p</li>
+            <li><i class="fas fa-check"></i> 6.000+ Series y Películas</li>
+            <li><i class="fas fa-check"></i> 80 Canales en Vivo</li>
+            <li><i class="fas fa-check"></i> Compatible con celulares y PC</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+        <!-- Plan Dúo -->
+        <div class="price-plan-card" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="plan-header-name">Plan Dúo</div>
+          <div class="plan-price-tag">
+            <sup>$</sup>14.500<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 2 Pantallas simultáneas</li>
+            <li><i class="fas fa-check"></i> Calidad 4K Ultra HD</li>
+            <li><i class="fas fa-check"></i> Catálogo Completo 12.000+</li>
+            <li><i class="fas fa-check"></i> 140 Canales en Vivo</li>
+            <li><i class="fas fa-check"></i> Smart TV + Celulares + PC</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+        <!-- Plan Familiar (DESTACADO) -->
+        <div class="price-plan-card highlighted" data-aos="zoom-in-up" data-aos-delay="200">
+          <span class="popular-ribbon">⭐ Más Elegido</span>
+          <div class="plan-header-name">Plan Familiar</div>
+          <div class="plan-price-tag">
+            <sup>$</sup>21.900<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 4 Pantallas simultáneas</li>
+            <li><i class="fas fa-check"></i> Calidad 4K HDR + Dolby</li>
+            <li><i class="fas fa-check"></i> Todo el catálogo ilimitado</li>
+            <li><i class="fas fa-check"></i> 180+ Canales Premium</li>
+            <li><i class="fas fa-check"></i> Función de Grabación Cloud</li>
+            <li><i class="fas fa-check"></i> Soporte Prioritario WhatsApp</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+        <!-- Plan Multi-Hogar -->
+        <div class="price-plan-card" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="plan-header-name">Plan Total</div>
+          <div class="plan-price-tag">
+            <sup>$</sup>29.500<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 6 Pantallas simultáneas</li>
+            <li><i class="fas fa-check"></i> Calidad 4K Ultra HD nativa</li>
+            <li><i class="fas fa-check"></i> Canales PPV y Eventos VIP</li>
+            <li><i class="fas fa-check"></i> Descargas offline</li>
+            <li><i class="fas fa-check"></i> Sin límite de dispositivos</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+      </div>
+
+      <!-- Planes en Dólares (USD) -->
+      <div class="pricing-table-grid" id="pricing-usd">
+        
+        <!-- Plan Básico USD -->
+        <div class="price-plan-card" data-aos="zoom-in-up">
+          <div class="plan-header-name">Plan Básico</div>
+          <div class="plan-price-tag">
+            <sup>U$D</sup>9<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 1 Pantalla simultánea</li>
+            <li><i class="fas fa-check"></i> Calidad Full HD 1080p</li>
+            <li><i class="fas fa-check"></i> 6.000+ Series y Películas</li>
+            <li><i class="fas fa-check"></i> 80 Canales en Vivo</li>
+            <li><i class="fas fa-check"></i> Acceso mundial sin geobloqueo</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+        <!-- Plan Dúo USD -->
+        <div class="price-plan-card" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="plan-header-name">Plan Dúo</div>
+          <div class="plan-price-tag">
+            <sup>U$D</sup>15<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 2 Pantallas simultáneas</li>
+            <li><i class="fas fa-check"></i> Calidad 4K Ultra HD</li>
+            <li><i class="fas fa-check"></i> Catálogo Completo 12.000+</li>
+            <li><i class="fas fa-check"></i> 140 Canales en Vivo</li>
+            <li><i class="fas fa-check"></i> Smart TV y Móviles</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+        <!-- Plan Familiar USD (DESTACADO) -->
+        <div class="price-plan-card highlighted" data-aos="zoom-in-up" data-aos-delay="200">
+          <span class="popular-ribbon">⭐ Más Elegido</span>
+          <div class="plan-header-name">Plan Familiar</div>
+          <div class="plan-price-tag">
+            <sup>U$D</sup>22<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 4 Pantallas simultáneas</li>
+            <li><i class="fas fa-check"></i> Calidad 4K HDR + Dolby</li>
+            <li><i class="fas fa-check"></i> 180+ Canales Premium</li>
+            <li><i class="fas fa-check"></i> Grabación en la Nube</li>
+            <li><i class="fas fa-check"></i> Soporte VIP 24/7</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+        <!-- Plan Multi-Hogar USD -->
+        <div class="price-plan-card" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="plan-header-name">Plan Total</div>
+          <div class="plan-price-tag">
+            <sup>U$D</sup>30<sub>/mes</sub>
+          </div>
+          <ul class="plan-features-list">
+            <li><i class="fas fa-check"></i> 6 Pantallas simultáneas</li>
+            <li><i class="fas fa-check"></i> Calidad 4K nativa máxima</li>
+            <li><i class="fas fa-check"></i> Todos los canales y PPV</li>
+            <li><i class="fas fa-check"></i> Múltiples ubicaciones permitidas</li>
+          </ul>
+          <a href="#contacto" class="btn-plan-select nav-anchor">Seleccionar</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 7 (SCROLL): BLANCO PURO - PREGUNTAS FRECUENTES (FAQ)
+       (MISMA ESTRUCTURA EN 2 COLUMNAS Y ANIMACIONES FLIP-LEFT / FLIP-RIGHT)
+       ========================================================================== -->
+  <section class="faq-section" id="preguntas">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-in">
+        <h2>Preguntas frecuentes</h2>
+        <p>Todo lo que necesitás saber antes de activar tu suscripción de streaming.</p>
+      </div>
+
+      <div class="faq-columns-grid">
+
+        <!-- Columna Izquierda (flip-left) -->
+        <div class="faq-column-left">
+          
+          <div class="faq-item-card" data-aos="flip-left">
+            <h4>
+              ¿Qué significa pantallas simultáneas?
+              <i class="fas fa-chevron-down"></i>
+            </h4>
+            <p>
+              Significa la cantidad de personas o dispositivos que pueden estar reproduciendo series, películas o canales en directo al mismo tiempo utilizando la misma cuenta. Podés tener la aplicación instalada en muchos dispositivos, pero mirar en simultáneo según tu plan.
+            </p>
+          </div>
+
+          <div class="faq-item-card" data-aos="flip-left" data-aos-delay="100">
+            <h4>
+              ¿Qué velocidad de internet requiero para 4K?
+              <i class="fas fa-chevron-down"></i>
+            </h4>
+            <p>
+              Gracias a nuestra codificación H.265 optimizada, podés disfrutar de contenido Full HD con solo 10 Mbps de bajada, y contenido 4K Ultra HD con una conexión estable de 25 Mbps en adelante.
+            </p>
+          </div>
+
+          <div class="faq-item-card" data-aos="flip-left" data-aos-delay="200">
+            <h4>
+              ¿Puedo cambiar o mejorar mi plan en cualquier momento?
+              <i class="fas fa-chevron-down"></i>
+            </h4>
+            <p>
+              Sí, podés subir de plan cuando lo desees de manera automática sin interrupciones en tu servicio. Solo se abona la diferencia proporcional del período restante.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Columna Derecha (flip-right) -->
+        <div class="faq-column-right">
+          
+          <div class="faq-item-card" data-aos="flip-right">
+            <h4>
+              ¿En qué dispositivos puedo instalar la aplicación?
+              <i class="fas fa-chevron-down"></i>
+            </h4>
+            <p>
+              Es compatible con Smart TVs (Samsung Tizen, LG WebOS, Android TV, Google TV), dispositivos tipo TV Stick (Amazon Fire Stick, Chromecast, Xiaomi), teléfonos y tablets Android e iOS, y computadoras mediante nuestro reproductor web.
+            </p>
+          </div>
+
+          <div class="faq-item-card" data-aos="flip-right" data-aos-delay="100">
+            <h4>
+              ¿Los canales de televisión tienen demora (delay)?
+              <i class="fas fa-chevron-down"></i>
+            </h4>
+            <p>
+              Nuestros enlaces directos de fibra reducen la latencia a menos de 5 segundos, ideal para disfrutar partidos de fútbol, eventos deportivos y noticias en tiempo real sin adelantos indeseados.
+            </p>
+          </div>
+
+          <div class="faq-item-card" data-aos="flip-right" data-aos-delay="200">
+            <h4>
+              ¿Hay contratos o cláusulas de permanencia?
+              <i class="fas fa-chevron-down"></i>
+            </h4>
+            <p>
+              Ninguno. No solicitamos tarjetas de crédito obligatorias ni contratos anuales. Abonás mes a mes con los medios de pago que prefieras y cancelás cuando lo decidas con un solo clic.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 8: TESTIMONIOS (FONDO CLARO)
+       ========================================================================== -->
+  <section class="testimonials-section" id="testimonios">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-in">
+        <h2>Experiencias de nuestros usuarios</h2>
+        <p>Descubrí por qué miles de familias eligen AMERICA Streaming cada día.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        
+        <div class="testi-card" data-aos="fade-up">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Excelente calidad de imagen en los partidos de fútbol. No se tilda nunca y la guía de canales es comodísima en mi Smart TV."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div class="testi-name">
+              <strong>Martín Gómez</strong>
+              <span>Usuario Plan Familiar · Buenos Aires</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"El catálogo de series y películas es gigante. Lo tengo en los celulares de los chicos y en la tele del living al mismo tiempo."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">C</div>
+            <div class="testi-name">
+              <strong>Carla Fernández</strong>
+              <span>Usuario Plan Dúo · Córdoba</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Atención al cliente de diez. Me ayudaron a configurar la app en mi Fire Stick en menos de cinco minutos por WhatsApp."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div class="testi-name">
+              <strong>Roberto Sosa</strong>
+              <span>Usuario Plan Básico · Rosario</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECCIÓN 9 (SCROLL): BLANCO PURO - CONTACTO
+       ========================================================================== -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-in">
+        <h2>Contáctenos</h2>
+        <p>Estamos disponibles las 24 horas para despejar dudas, activar cuentas o brindar asesoramiento técnico.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Info Izquierda -->
+        <div class="contact-info-col" data-aos="fade-right">
+          <h3>¿Tenés alguna consulta o querés tu cuenta demo?</h3>
+          <p>
+            Completá el formulario o escribinos directamente. Nuestro equipo te enviará los accesos de prueba y te guiará paso a paso en la instalación.
+          </p>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-item-text">
+              <strong>Correo Electrónico</strong>
+              <span>americastreaming@live.com</span>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-item-text">
+              <strong>WhatsApp Directo</strong>
+              <span>+54 9 11 0000-0000 (Atención Inmediata)</span>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon"><i class="fas fa-globe"></i></div>
+            <div class="contact-item-text">
+              <strong>Sitio Web Oficial</strong>
+              <span>www.americastreaming.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario Derecha -->
+        <div class="contact-form-card" data-aos="fade-left">
+          <form onsubmit="handleContactSubmit(event)">
+            <div class="form-group-field">
+              <label for="txtName">Nombre y Apellido</label>
+              <input type="text" id="txtName" placeholder="Ej: Juan Pérez" required />
+            </div>
+
+            <div class="form-group-field">
+              <label for="txtEmail">Correo Electrónico</label>
+              <input type="email" id="txtEmail" placeholder="juan@ejemplo.com" required />
+            </div>
+
+            <div class="form-group-field">
+              <label for="selPlan">Plan de Interés</label>
+              <select id="selPlan">
+                <option value="Plan Familiar">Plan Familiar (Recomendado)</option>
+                <option value="Plan Dúo">Plan Dúo</option>
+                <option value="Plan Básico">Plan Básico</option>
+                <option value="Plan Total">Plan Total</option>
+                <option value="Demo Gratuita">Solicitar Demo Gratuita</option>
+              </select>
+            </div>
+
+            <div class="form-group-field">
+              <label for="txtMsg">Mensaje o Consulta</label>
+              <textarea id="txtMsg" placeholder="Contanos qué dispositivos tenés o qué consulta querés realizar..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit-contact">
+              <i class="fas fa-paper-plane" style="margin-right:8px;"></i> Enviar Solicitud
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      
+      <!-- Brand Central -->
+      <div class="footer-brand-box" data-aos="zoom-in">
+        <div class="footer-brand-title">
+          <div style="width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <i class="fas fa-play" style="color:#ffffff;font-size:1.1rem;"></i>
+          </div>
+          AMERICA Streaming™
+        </div>
+        <p>
+          Líderes en soluciones profesionales de streaming de video, series, películas y televisión en vivo para Argentina y todo el continente americano.
+        </p>
+        <div class="footer-social-row">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Columnas del Footer -->
+      <div class="footer-columns-row">
+        
+        <div class="footer-col" data-aos="fade-right">
+          <h4>AMERICA Streaming™</h4>
+          <p>
+            Soluciones Profesionales Simples.<br>
+            www.americastreaming.com<br>
+            Email: americastreaming@live.com
+          </p>
+        </div>
+
+        <div class="footer-col" data-aos="fade-up">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#servicio" class="nav-anchor">Servicio</a></li>
+            <li><a href="#catalogo" class="nav-anchor">Catálogo</a></li>
+            <li><a href="#nosotros" class="nav-anchor">Nosotros</a></li>
+            <li><a href="#precios" class="nav-anchor">Precios</a></li>
+            <li><a href="#preguntas" class="nav-anchor">Preguntas</a></li>
+            <li><a href="#contacto" class="nav-anchor">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+          <h4>Términos & Legal</h4>
+          <ul>
+            <li><a href="javascript:void(0)">Declaración de Privacidad</a></li>
+            <li><a href="javascript:void(0)">Términos de Uso</a></li>
+            <li><a href="javascript:void(0)">Condiciones de Servicio</a></li>
+            <li><a href="javascript:void(0)">Centro de Ayuda</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col" data-aos="fade-left">
+          <h4>Medios de Pago</h4>
+          <p>Aboná en pesos argentinos o dólares:</p>
+          <div class="payment-tags-wrap">
+            <span class="pay-tag"><i class="fas fa-credit-card"></i> Tarjetas Débito / Crédito</span>
+            <span class="pay-tag"><i class="fas fa-money-bill-wave"></i> Mercado Pago / Transferencia</span>
+            <span class="pay-tag"><i class="fab fa-paypal"></i> PayPal</span>
+            <span class="pay-tag"><i class="fas fa-store"></i> Pago Fácil / RapiPago</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior de Derechos -->
+    <div class="copyright-footer-bar">
+      © 2026 AMERICA Streaming™. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Botón Volver Arriba -->
+  <a href="#home" id="btnToTop" class="nav-anchor" aria-label="Volver Arriba">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- ==========================================================================
+       MODAL 1: DEMO EN VIVO CON REPRODUCTOR REAL DE VIDEO
+       ========================================================================== -->
+  <div class="app-modal-backdrop" id="videoDemoModal">
+    <div class="app-modal-dialog">
+      <div class="modal-head">
+        <h4><i class="fas fa-play" style="color:var(--primary);"></i> Demostración en Vivo 4K</h4>
+        <button class="modal-close-trigger" onclick="closeAppModal('videoDemoModal')">&times;</button>
+      </div>
+      <div class="modal-inner-content">
+        <div style="border-radius:12px;overflow:hidden;background:#000;aspect-ratio:16/9;margin-bottom:15px;">
+          <video controls autoplay muted style="width:100%;height:100%;object-fit:cover;" poster="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&auto=format&fit=crop&q=80">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            Tu navegador no soporta reproducción de video HTML5.
+          </video>
+        </div>
+        <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.6;">
+          Esta es una vista previa del reproductor adaptativo de AMERICA Streaming. Nuestro sistema transcodifica en tiempo real para brindarte estabilidad ininterrumpida sin cortes ni demoras.
+        </p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn-modal-close-neutral" onclick="closeAppModal('videoDemoModal')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: INICIAR SESIÓN (LOGIN)
+       ========================================================================== -->
+  <div class="app-modal-backdrop" id="loginModal">
+    <div class="app-modal-dialog" style="max-width:440px;">
+      <div class="modal-head">
+        <h4><i class="fas fa-user-circle" style="color:var(--primary);"></i> Acceso a Clientes</h4>
+        <button class="modal-close-trigger" onclick="closeAppModal('loginModal')">&times;</button>
+      </div>
+      <div class="modal-inner-content">
+        <form onsubmit="handleLoginSubmit(event)">
+          <div class="form-group-field">
+            <label>Correo Electrónico</label>
+            <input type="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group-field">
+            <label>Contraseña</label>
+            <input type="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-submit-contact" style="border-radius:8px;padding:12px;">
+            Ingresar al Panel
+          </button>
+          <p style="text-align:center;margin-top:16px;font-size:0.88rem;color:var(--text-muted);">
+            ¿Todavía no tenés cuenta? <a href="#precios" onclick="closeAppModal('loginModal')" style="color:var(--primary);font-weight:700;" class="nav-anchor">Ver planes</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS: ANIMACIONES AOS, NAVEGACIÓN Y FUNCIONALIDADES
+       ========================================================================== -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Inicializar biblioteca de animaciones AOS (efectos en scroll)
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 900,
+      once: false
+    });
+
+    // Control de Navbar Sticky y Botón Volver Arriba
+    const navbar = document.getElementById('navbar');
+    const btnToTop = document.getElementById('btnToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('navScrolled');
+        btnToTop.classList.add('visible');
+      } else {
+        navbar.classList.remove('navScrolled');
+        btnToTop.classList.remove('visible');
+      }
+    });
+
+    // Menú móvil hamburguesa
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('mobileOpen');
+    });
+
+    // Desplazamiento Suave (Smooth Scroll)
+    document.querySelectorAll('.nav-anchor').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetElem = document.querySelector(targetId);
+          if (targetElem) {
+            targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            navLinks.classList.remove('mobileOpen');
+          }
+        }
+      });
+    });
+
+    // Filtros del Catálogo Interactivo
+    function filterCatalog(category, btnElem) {
+      document.querySelectorAll('.catalog-tab-btn').forEach(btn => btn.classList.remove('active'));
+      btnElem.classList.add('active');
+
+      const cards = document.querySelectorAll('.media-card');
+      cards.forEach(card => {
+        if (category === 'todos' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Selector de Moneda de Precios (ARS / USD)
+    function switchCurrency(currency, btnElem) {
+      document.querySelectorAll('.currency-btn').forEach(btn => btn.classList.remove('active'));
+      btnElem.classList.add('active');
+
+      if (currency === 'ars') {
+        document.getElementById('pricing-ars').classList.add('active');
+        document.getElementById('pricing-usd').classList.remove('active');
+      } else {
+        document.getElementById('pricing-usd').classList.add('active');
+        document.getElementById('pricing-ars').classList.remove('active');
+      }
+    }
+
+    // Modales de Video Demo y Login
+    function openAppModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) modal.classList.add('active');
+    }
+
+    function closeAppModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+        // Si tiene video, pausar al cerrar
+        const video = modal.querySelector('video');
+        if (video) video.pause();
+      }
+    }
+
+    // Cerrar modal al hacer clic fuera del diálogo
+    document.querySelectorAll('.app-modal-backdrop').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeAppModal(modal.id);
+        }
+      });
+    });
+
+    // Manejadores de Formularios
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('¡Gracias por contactarnos! Tu solicitud fue registrada con éxito. Un asesor técnico se comunicará con vos en breve.');
+      e.target.reset();
+    }
+
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      alert('Credenciales enviadas correctamente. Redirigiendo a tu panel de streaming...');
+    }
+  </script>
+</body>
+</html>
