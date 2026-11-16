@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMERICA Streaming | 35.000 Películas, 5.000 Series y 3.500 Canales en Vivo en 4K con P2P</title>
-  <meta name="description" content="Plataforma de streaming líder con 35.000 películas, 5.000 series y 3.500 canales de televisión en vivo. Únicos con sistema P2P sin cortes y solicitudes de contenido a pedido." />
-  <meta name="keywords" content="streaming p2p, peliculas streaming, series online, canales en vivo, sistema p2p iptv, 35000 peliculas, 3500 canales tv, américa streaming 4k" />
+  <title>AMERICA Streaming | +43.000 Películas, +5.500 Series y +2.100 Canales en Vivo en 4K y Plex 60 FPS con Conexión Blindada HTTPS</title>
+  <meta name="description" content="Plataforma de streaming premium líder con más de 43.000 películas (15.000 en Plex 60 FPS), 5.500 series completas y 2.100 canales curados sin caídas. Conexión segura SSL (Puerto 443) inmune a bloqueos de operadoras y hasta 5 pantallas simultáneas." />
+  <meta name="keywords" content="streaming https 443, plex 60fps, iptv sin bloqueos, 43000 peliculas, 5500 series, 5 pantallas simultaneas, canales en vivo curados, champions league en vivo, mlb nba iptv, américa streaming 4k" />
 
   <!-- Google Fonts: Source Sans Pro & Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1909,6 +1909,125 @@
         gap: 28px;
       }
     }
+  
+    /* ==========================================================================
+       SECCIÓN DE COMPARATIVA
+       ========================================================================== */
+    .comparison-section {
+      background: var(--white-pure);
+      padding: 90px 0;
+      position: relative;
+    }
+    .section-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(229, 9, 20, 0.08);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .comparison-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .comparison-row-card {
+      display: grid;
+      grid-template-columns: 280px 1fr 1fr;
+      gap: 24px;
+      padding: 24px 28px;
+      background: var(--bg-light);
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .comparison-row-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .comparison-row-card.highlighted {
+      background: #f0fdf4;
+      border: 2px solid #86efac;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
+    }
+    .comp-feature {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .comp-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .comp-info h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .comp-info p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    .comp-other, .comp-our {
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .comp-other {
+      background: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #7f1d1d;
+    }
+    .comp-our {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      color: #14532d;
+    }
+    .comp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .comp-badge.bad {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .comp-badge.good {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+    @media (max-width: 992px) {
+      .comparison-row-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1937,6 +2056,7 @@
       <li><a href="#catalogo" class="nav-anchor">Catálogo</a></li>
       <li><a href="#servicio" class="nav-anchor">Servicio</a></li>
       <li><a href="#nosotros" class="nav-anchor">Nosotros</a></li>
+      <li><a href="#comparativa" class="nav-anchor">¿Por Qué Nosotros?</a></li>
       <li><a href="#precios" class="nav-anchor">Precios</a></li>
       <li><a href="#preguntas" class="nav-anchor">FAQ</a></li>
       <li><a href="#contacto" class="nav-anchor">Contacto</a></li>
@@ -1957,15 +2077,15 @@
         <div class="hero-info-col">
           <div class="hero-badge-live" data-aos="fade-down" data-aos-duration="800">
             <span class="pulse-dot"></span>
-            Únicos con Sistema P2P · Transmisión en Vivo 4K Ultra HD
+            Exclusivo: Servidores Blindados HTTPS (Puerto 443) · Calidad Master PLEX 60 FPS
           </div>
 
           <h1 class="hero-title" data-aos="fade-right" data-aos-duration="1000">
-            Series, Películas y <span class="highlight-red">TV en Vivo</span> sin límites
+            Series, Películas y <span class="highlight-red">TV en Vivo</span> sin bloqueos ni límites
           </h1>
 
           <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="150" data-aos-duration="1000">
-            Accede a más de 35.000 películas, 5.000 series completas y 3.500 canales en directo las 24 horas. Disfruta de la máxima fluidez con nuestro sistema P2P anti-congelamiento y respuesta garantizada a solicitudes de nuevas películas, series y temporadas.
+            Accede a más de 43.000 películas, 5.500 series completas y 2.100 canales premium 100% curados en directo las 24 horas. Único servicio con conexión cifrada HTTPS (puerto seguro 443) inmune a bloqueos de compañías de internet, fluidez extrema en calidad PLEX a 60 FPS y hasta 5 pantallas simultáneas para toda la familia.
           </p>
 
           <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="300">
@@ -1980,22 +2100,27 @@
           <!-- Métricas del servicio -->
           <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
             <div class="hero-stat-item">
-              <h3>35.000+</h3>
-              <p>Películas</p>
+              <h3>+43.000</h3>
+              <p>Películas (15k Plex 60 FPS)</p>
             </div>
             <div class="hero-stat-item">
-              <h3>5.000+</h3>
-              <p>Series</p>
+              <h3>+5.500</h3>
+              <p>Series Completas</p>
             </div>
             <div class="hero-stat-item">
-              <h3>3.500+</h3>
-              <p>Canales TV en Vivo</p>
+              <h3>+2.100</h3>
+              <p>Canales Curados</p>
             </div>
             <div class="hero-stat-item">
-              <h3 style="color:#10b981;">P2P</h3>
-              <p>Cero Congelamiento</p>
+              <h3 style="color:#10b981;">5 Pantallas</h3>
+              <p>Simultáneas Familiares</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3 style="color:#0ea5e9;">HTTPS / 443</h3>
+              <p>Inmune a Bloqueos</p>
             </div>
           </div>
+        </div>
         </div>
 
         <!-- Columna Derecha: Reproductor / Mockup Interactivo -->
@@ -2111,8 +2236,8 @@
   <section class="catalog-section" id="catalogo">
     <div class="container">
       <div class="section-title" data-aos="zoom-in">
-        <h2>Catálogo de 35.000 Películas y 5.000 Series</h2>
-        <p>Más de 35.000 películas, 5.000 series completas y 3.500 canales en vivo. ¡Y si no encuentras algún título, nos lo pides y lo agregamos de inmediato!</p>
+        <h2>Catálogo de +43.000 Películas y +5.500 Series</h2>
+        <p>Más de 43.000 películas (con más de 15.000 títulos en calidad Master PLEX a 60 FPS), 5.500 series completas de todas las plataformas y 2.100 canales en vivo 100% curados. ¡Y si buscas algún título en específico, pídelo y lo agregamos para ti!</p>
       </div>
 
       <!-- Filtros interactivos -->
@@ -2224,42 +2349,75 @@
   <section class="servicio-section" id="servicio">
     <div class="container">
       <div class="section-title" data-aos="zoom-in">
-        <h2>Ventajas Exclusivas que Nos Diferencian</h2>
-        <p>Infraestructura P2P de última generación, catálogo masivo y atención directa a las solicitudes de nuestros usuarios.</p>
+        <h2>Ventajas Exclusivas que Hacen Único a Nuestro Servicio</h2>
+        <p>Conexión blindada HTTPS puerto 443, calidad cinematográfica PLEX en 60 FPS, canales 100% curados y hasta 5 pantallas simultáneas.</p>
       </div>
 
       <div class="servicio-grid">
 
-        <!-- Card 1: P2P -->
+        <!-- Card 1: Conexión Blindada HTTPS 443 -->
         <div class="f1-card" data-aos="fade-right">
-          <div class="f1-icon-wrap icon-stream" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
-            <i class="fas fa-network-wired"></i>
+          <div class="f1-icon-wrap icon-stream" style="background: rgba(14, 165, 233, 0.12); color: #0ea5e9;">
+            <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>Únicos con Sistema P2P</h3>
+          <h3>Conexión Blindada HTTPS (Puerto 443)</h3>
           <p>
-            Tecnología Peer-to-Peer exclusiva que distribuye la transmisión de forma inteligente. Olvídate de los molestos congelamientos durante los partidos de fútbol y eventos en vivo más concurridos.
+            A diferencia de otros servicios que usan HTTP abierto (puertos 8080/2095) y sufren cortes o bloqueos de operadoras en partidos importantes, nuestra señal viaja cifrada con SSL bancario por el puerto 443. Imposible de bloquear por tu proveedor de internet y sin necesidad de VPN.
           </p>
         </div>
 
-        <!-- Card 2: Solicitudes de Contenido -->
+        <!-- Card 2: Calidad PLEX 60 FPS -->
         <div class="f1-card" data-aos="fade-up">
-          <div class="f1-icon-wrap icon-player" style="background: rgba(229, 9, 20, 0.1); color: var(--primary);">
-            <i class="fas fa-folder-plus"></i>
+          <div class="f1-icon-wrap icon-player" style="background: rgba(229, 9, 20, 0.12); color: var(--primary);">
+            <i class="fas fa-film"></i>
           </div>
-          <h3>Solicitud de Nuevos Títulos</h3>
+          <h3>Master PLEX en 60 FPS Reales</h3>
           <p>
-            ¿Buscas una película reciente, serie o una temporada específica? Respondemos a tus solicitudes incorporando nuevos títulos y temporadas a nuestro catálogo con actualizaciones constantes.
+            Más de 15.000 películas masterizadas directamente a 60 fotogramas por segundo. Disfruta de un movimiento ultra fluido sin tirones, con nitidez 4K pura y sonido envolvente Dolby Atmos / 5.1 en tu televisor.
           </p>
         </div>
 
-        <!-- Card 3: 35.000 Películas y 3.500 Canales -->
+        <!-- Card 3: Hasta 5 Pantallas -->
         <div class="f1-card" data-aos="fade-left">
-          <div class="f1-icon-wrap icon-support" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">
+          <div class="f1-icon-wrap icon-support" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Hasta 5 Pantallas Simultáneas</h3>
+          <p>
+            Conecta toda la casa al mismo tiempo. Mientras disfrutas del fútbol en la sala, otra persona ve su serie en el dormitorio y los chicos dibujos en sus tablets, todos en simultáneo sin que nadie sufra desconexiones ni cortes.
+          </p>
+        </div>
+
+        <!-- Card 4: Canales Curados Deportes -->
+        <div class="f1-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="f1-icon-wrap" style="background: rgba(255, 183, 3, 0.12); color: #ffb703;">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Canales Curados y Deportes VIP</h3>
+          <p>
+            No inflamos números con listas basura que no abren. Más de 2.100 señales verificadas: carpetas directas de Champions League, MLB, NBA, ESPN Deportes, F1, UFC y Cine Premium organizados para ir directo al grano.
+          </p>
+        </div>
+
+        <!-- Card 5: Catálogo 43k + 5.5k -->
+        <div class="f1-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="f1-icon-wrap" style="background: rgba(168, 85, 247, 0.12); color: #a855f7;">
             <i class="fas fa-tv"></i>
           </div>
-          <h3>35.000 Películas & 3.500 Canales</h3>
+          <h3>+43.000 Películas y +5.500 Series</h3>
           <p>
-            La colección más completa: 35.000 películas, 5.000 series con todas sus temporadas y más de 3.500 señales de televisión mundial en vivo en 4K Ultra HD y Full HD con Guía EPG activa.
+            Todas las plataformas reunidas en un solo lugar: estrenos de cartelera, sagas completas, temporadas completas de Netflix, Max, Amazon Prime, Disney+, Apple TV+, novelas y anime en alta definición.
+          </p>
+        </div>
+
+        <!-- Card 6: Solicitud de Contenido y Soporte 24/7 -->
+        <div class="f1-card" data-aos="fade-left" data-aos-delay="200">
+          <div class="f1-icon-wrap" style="background: rgba(236, 72, 153, 0.12); color: #ec4899;">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Soporte VIP y Títulos a Pedido</h3>
+          <p>
+            Atención humana personalizada por WhatsApp los 365 días del año. ¿Buscas un título específico que no encuentres? Nos escribes y nuestro equipo lo agrega a la brevedad para ti.
           </p>
         </div>
 
@@ -2390,7 +2548,7 @@
     <div class="container">
       <div class="section-title" data-aos="zoom-in">
         <h2>Paquetes y Precios en USD</h2>
-        <p>Precios oficiales en Dólares (USD). Activación inmediata y soporte personalizado a través de nuestro WhatsApp Business.</p>
+        <p>Precios oficiales en Dólares (USD). Activación inmediata, hasta 5 pantallas simultáneas y soporte VIP personalizado por WhatsApp Business.</p>
       </div>
 
       <!-- Cuadrícula de Paquetes en USD -->
@@ -2680,7 +2838,7 @@
               <i class="fas fa-chevron-down"></i>
             </h4>
             <p>
-              Significa la cantidad de personas o dispositivos que pueden estar reproduciendo series, películas o canales en directo al mismo tiempo utilizando la misma cuenta. Puedes tener la aplicación instalada en varios dispositivos, pero ver en simultáneo según tu paquete.
+              Significa la cantidad de personas o dispositivos que pueden estar reproduciendo series, películas o canales en directo al mismo tiempo utilizando la misma cuenta. Con nuestro servicio puedes tener <strong>hasta 5 pantallas simultáneas</strong> en tu hogar (sala, dormitorios, celulares y tablets) sin que nadie sufra desconexiones ni límites molestos.
             </p>
           </div>
 
@@ -2706,11 +2864,11 @@
 
           <div class="faq-item-card" data-aos="flip-left" data-aos-delay="300">
             <h4>
-              ¿Qué es el Sistema P2P y qué ventajas me ofrece?
+              ¿Por qué nuestro servicio no sufre bloqueos de las compañías de internet (ISP)?
               <i class="fas fa-chevron-down"></i>
             </h4>
             <p>
-              Somos los únicos con arquitectura Peer-to-Peer (P2P). A diferencia de otros servicios que colapsan en partidos de fútbol o estrenos de gran audiencia, el sistema P2P distribuye la carga garantizando transmisión 4K continua, fluida y sin cortes ni congelamientos.
+              A diferencia de los servicios tradicionales que usan puertos abiertos y vulnerables (HTTP 8080 o 2095) y son bloqueados o estrangulados por las operadoras durante los partidos de fútbol, nosotros operamos con <strong>Conexión Cifrada Nativa HTTPS / SSL por el Puerto Seguro 443</strong> (el mismo estándar de seguridad bancario, Google o Netflix). Tu proveedor de internet no puede bloquear ni limitar tu transmisión, garantizando fluidez absoluta sin necesidad de usar VPN.
             </p>
           </div>
 
@@ -2755,7 +2913,7 @@
               <i class="fas fa-chevron-down"></i>
             </h4>
             <p>
-              Si buscas algún título que aún no esté entre nuestras 35.000 películas o 5.000 series, simplemente nos escribes por WhatsApp con el nombre. Nuestro equipo atiende las solicitudes y actualiza el catálogo agregando el contenido en alta definición.
+              Si buscas algún título que aún no esté entre nuestras más de 43.000 películas (incluyendo títulos en calidad Master PLEX a 60 FPS) o 5.500 series, simplemente nos escribes por WhatsApp con el nombre. Nuestro equipo atiende las solicitudes y actualiza el catálogo agregando el contenido en alta definición a la brevedad.
             </p>
           </div>
 
