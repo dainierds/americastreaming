@@ -20,7 +20,7 @@
 
   <!-- PayPal SDK Hosted Buttons (Mes de Prueba $5 USD) -->
   <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAAnAE99CWgRaiX2qT37n2IfzAPugu5qhLgDI262Xll8fH_6C4grb-D3sxXxCiPUVBzsNWxZ8041gS4W00&components=hosted-buttons&enable-funding=venmo&currency=USD">
+    src="https://www.paypal.com/sdk/js?client-id=BAAnAE99CWgRaiX2qT37n2IfzAPugu5qhLgDI262Xll8fH_6C4grb-D3sxXxCiPUVBzsNWxZ8O4lgS4W0O&components=hosted-buttons&enable-funding=venmo&currency=USD">
   </script>
 
   <style>
@@ -2997,12 +2997,13 @@
 
     // Inicialización del Botón Oficial de PayPal para el Mes de Prueba ($5 USD)
     function initPayPalButton() {
-      if (window.paypal && typeof paypal.HostedButtons === 'function') {
+      const container = document.getElementById('paypal-container-7AGLVTWBCJCS4');
+      if (container && container.children.length === 0 && window.paypal && typeof paypal.HostedButtons === 'function') {
         paypal.HostedButtons({
           hostedButtonId: "7AGLVTWBCJCS4",
         }).render("#paypal-container-7AGLVTWBCJCS4");
-      } else {
-        setTimeout(initPayPalButton, 400);
+      } else if (container && container.children.length === 0) {
+        setTimeout(initPayPalButton, 300);
       }
     }
 
