@@ -741,10 +741,11 @@
 
     .media-poster-box {
       position: relative;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 4 / 3;
       background-size: cover;
-      background-position: center;
+      background-position: center top;
       overflow: hidden;
+      background-repeat: no-repeat;
     }
 
     .media-tag-badge {
@@ -2250,9 +2251,9 @@
       <!-- Cuadrícula de Contenido -->
       <div class="catalog-cards-grid">
 
-        <!-- Card 1: Serie -->
-        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="100">
-          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #1b263b, #0d1b2a);">
+        <!-- Serie 1: La Casa del Dragón -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="50">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/627/1568449.jpg'); background-position: center top;">
             <span class="media-tag-badge tag-series">Serie</span>
             <span class="media-res-badge">4K HDR</span>
             <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
@@ -2261,21 +2262,21 @@
           </div>
           <div class="media-info-box">
             <div>
-              <h4>Crónicas de la Galaxia</h4>
+              <h4>La Casa del Dragón</h4>
               <div class="media-meta-line">
                 <span class="rating"><i class="fas fa-star"></i> 9.4</span>
-                <span>3 Temporadas</span>
-                <span>Ciencia Ficción</span>
+                <span>2 Temporadas</span>
+                <span>Max · Fantasía Épica</span>
               </div>
-              <p>Una expedición más allá de las fronteras conocidas desafía los límites del espacio y el tiempo.</p>
+              <p>La sangrienta guerra civil de los Targaryen por el Trono de Hierro con las batallas de dragones más colosales.</p>
             </div>
           </div>
         </div>
 
-        <!-- Card 2: Película -->
-        <div class="media-card" data-category="peliculas" data-aos="fade-up" data-aos-delay="150">
-          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #780000, #003049);">
-            <span class="media-tag-badge tag-movie">Película</span>
+        <!-- Serie 2: Betty la Fea: La Historia Continúa -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="100">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/528/1320142.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-series">Serie</span>
             <span class="media-res-badge">4K ULTRA</span>
             <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
               <div class="media-play-icon"><i class="fas fa-play"></i></div>
@@ -2283,41 +2284,42 @@
           </div>
           <div class="media-info-box">
             <div>
-              <h4>El Asedio Final</h4>
+              <h4>Betty la Fea: La Historia Continúa</h4>
               <div class="media-meta-line">
-                <span class="rating"><i class="fas fa-star"></i> 8.9</span>
-                <span>2h 18min</span>
-                <span>Acción / Thriller</span>
+                <span class="rating"><i class="fas fa-star"></i> 9.3</span>
+                <span>Nueva Temporada</span>
+                <span>Prime · Comedia</span>
               </div>
-              <p>Un equipo de élite debe recuperar una clave secreta antes de que caiga en manos enemigas.</p>
+              <p>El regreso del fenómeno más visto de la televisión hispana. Betty afronta nuevos retos familiares y de poder en Ecomoda.</p>
             </div>
           </div>
         </div>
 
-        <!-- Card 3: TV en Vivo -->
-        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="200">
-          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #0077b6, #03045e);">
-            <span class="media-tag-badge tag-tv">Canal TV</span>
-            <span class="media-res-badge">EN VIVO</span>
+        <!-- Serie 3: El Pingüino (The Penguin) -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="150">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/536/1340329.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-series">Serie</span>
+            <span class="media-res-badge">4K DOLBY</span>
             <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
               <div class="media-play-icon"><i class="fas fa-play"></i></div>
             </div>
           </div>
           <div class="media-info-box">
             <div>
-              <h4>Deportes Premium 1 HD</h4>
+              <h4>El Pingüino (The Penguin)</h4>
               <div class="media-meta-line">
-                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
-                <span>Fútbol Internacional</span>
+                <span class="rating"><i class="fas fa-star"></i> 9.5</span>
+                <span>Miniserie Completa</span>
+                <span>Max · Crimen</span>
               </div>
-              <p>Partidos en directo de las ligas más importantes del mundo, Libertadores y Champions League.</p>
+              <p>Colin Farrell en su transformación estelar como Oz Cobb, escalando a sangre y fuego el bajo mundo criminal de Gotham.</p>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Serie -->
-        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="250">
-          <div class="media-poster-box" style="background-image: linear-gradient(135deg, #2b2d42, #8d99ae);">
+        <!-- Serie 4: El Encargado -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="200">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/527/1318948.jpg'); background-position: center top;">
             <span class="media-tag-badge tag-series">Serie</span>
             <span class="media-res-badge">1080p FHD</span>
             <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
@@ -2326,13 +2328,79 @@
           </div>
           <div class="media-info-box">
             <div>
-              <h4>Sombras en la Ciudad</h4>
+              <h4>El Encargado</h4>
               <div class="media-meta-line">
-                <span class="rating"><i class="fas fa-star"></i> 9.1</span>
-                <span>5 Temporadas</span>
-                <span>Crimen / Drama</span>
+                <span class="rating"><i class="fas fa-star"></i> 9.4</span>
+                <span>3 Temporadas</span>
+                <span>Disney+ · Comedia</span>
               </div>
-              <p>Investigaciones complejas en un submundo nocturno donde nadie es quien dice ser.</p>
+              <p>Guillermo Francella interpreta a Eliseo, el carismático superintendente que vigila y manipula a todos los vecinos del edificio.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serie 5: Cien Años de Soledad -->
+        <div class="media-card" data-category="series" data-aos="fade-up" data-aos-delay="250">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/636/1592186.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-series">Serie</span>
+            <span class="media-res-badge">4K MASTER</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Cien Años de Soledad</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-star"></i> 9.6</span>
+                <span>Estreno Mundial</span>
+                <span>Netflix · Realismo Mágico</span>
+              </div>
+              <p>La adaptación colosal de la cumbre literaria de Gabriel García Márquez sobre las siete generaciones de los Buendía en Macondo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Película - Estrenos de Cartelera -->
+        <div class="media-card" data-category="peliculas" data-aos="fade-up" data-aos-delay="300">
+          <div class="media-poster-box" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&auto=format&fit=crop&q=80'); background-position: center;">
+            <span class="media-tag-badge tag-movie">Película</span>
+            <span class="media-res-badge">4K ULTRA</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Estrenos de Cartelera & Cine 4K</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-star"></i> 9.2</span>
+                <span>+35.000 Películas</span>
+                <span>Acción / Aventura</span>
+              </div>
+              <p>Todos los taquillazos de cine y estrenos semanales en calidad 4K HDR sin comprimir y con audio latino original.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: TV en Vivo - Canales de Deportes & Fútbol -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="350">
+          <div class="media-poster-box" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&auto=format&fit=crop&q=80'); background-position: center;">
+            <span class="media-tag-badge tag-tv">Canal TV</span>
+            <span class="media-res-badge">EN VIVO P2P</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Fútbol VIP & Deportes en Directo</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>+3.500 Canales</span>
+                <span>Deportes & Eventos</span>
+              </div>
+              <p>Champions League, Premier League, Libertadores, MLB, NBA y UFC en vivo a 60 FPS con tecnología P2P sin cortes.</p>
             </div>
           </div>
         </div>
