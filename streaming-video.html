@@ -764,6 +764,8 @@
     .tag-series { background: #6366f1; }
     .tag-movie { background: var(--primary); }
     .tag-tv { background: #10b981; }
+    .tag-kids { background: #f59e0b; }
+    .tag-doc { background: #0284c7; }
 
     .media-res-badge {
       position: absolute;
@@ -2471,24 +2473,134 @@
           </div>
         </div>
 
-        <!-- Card 7: TV en Vivo - Canales de Deportes & Fútbol -->
-        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="350">
-          <div class="media-poster-box" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&auto=format&fit=crop&q=80'); background-position: center;">
+        <!-- Canales TV 1: LaLiga Española & Fútbol en Directo -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="100">
+          <div class="media-poster-box" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&auto=format&fit=crop&q=80'); background-position: center top;">
             <span class="media-tag-badge tag-tv">Canal TV</span>
-            <span class="media-res-badge">EN VIVO P2P</span>
+            <span class="media-res-badge">60 FPS P2P</span>
             <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
               <div class="media-play-icon"><i class="fas fa-play"></i></div>
             </div>
           </div>
           <div class="media-info-box">
             <div>
-              <h4>Fútbol VIP & Deportes en Directo</h4>
+              <h4>LaLiga Española EA Sports</h4>
               <div class="media-meta-line">
                 <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
-                <span>+3.500 Canales</span>
-                <span>Deportes & Eventos</span>
+                <span>Fútbol de España</span>
+                <span>Real Madrid · Barcelona · Atleti</span>
               </div>
-              <p>Champions League, Premier League, Libertadores, MLB, NBA y UFC en vivo a 60 FPS con tecnología P2P sin cortes.</p>
+              <p>Partidos completos de la Liga Española en directo a 60 FPS con narración oficial en español y servidores P2P anti-bloqueo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canales TV 2: Telemundo HD -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="150">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/371/929611.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-tv">Canal TV</span>
+            <span class="media-res-badge">EN VIVO FHD</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Telemundo HD</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>Señal Internacional</span>
+                <span>Super Series & Noticias</span>
+              </div>
+              <p>Transmisión continua de Telemundo: El Señor de los Cielos, La Reina del Sur, Noticias Telemundo y shows de entretenimiento 24/7.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canales TV 3: Univision HD -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="200">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/605/1514689.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-tv">Canal TV</span>
+            <span class="media-res-badge">EN VIVO FHD</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Univision HD</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>Líder Hispano</span>
+                <span>Telenovelas & Noticias</span>
+              </div>
+              <p>La cadena hispana preferida: Despierta América, El Gordo y La Flaca, telenovelas de estreno y noticieros en vivo para toda la familia.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canales TV 4: Disney Junior (Para Niños) -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="250">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/512/1281879.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-kids">Para Niños</span>
+            <span class="media-res-badge">EN VIVO HD</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Disney Junior</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>Infantil & Preescolar</span>
+                <span>Bluey · Mickey · Spidey</span>
+              </div>
+              <p>El canal favorito de los más pequeños: Bluey, La Casa de Mickey Mouse y programación divertida, sana y educativa sin interrupciones.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canales TV 5: Nickelodeon -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="300">
+          <div class="media-poster-box" style="background-image: url('https://static.tvmaze.com/uploads/images/original_untouched/594/1486607.jpg'); background-position: center top;">
+            <span class="media-tag-badge tag-kids">Kids & Teens</span>
+            <span class="media-res-badge">EN VIVO HD</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Nickelodeon (Nick HD)</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>Animación & Comedia</span>
+                <span>Bob Esponja · Paw Patrol</span>
+              </div>
+              <p>Las mejores series animadas y comedia: Bob Esponja, Paw Patrol, The Loud House y las producciones juveniles más exitosas de Nick.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canales TV 6: Discovery Channel -->
+        <div class="media-card" data-category="tv" data-aos="fade-up" data-aos-delay="350">
+          <div class="media-poster-box" style="background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80'); background-position: center top;">
+            <span class="media-tag-badge tag-doc">Documental</span>
+            <span class="media-res-badge">4K ULTRA HD</span>
+            <div class="media-overlay-play" onclick="openAppModal('videoDemoModal')">
+              <div class="media-play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="media-info-box">
+            <div>
+              <h4>Discovery Channel HD</h4>
+              <div class="media-meta-line">
+                <span class="rating"><i class="fas fa-circle" style="color:#ef4444;font-size:0.6rem;"></i> DIRECTO</span>
+                <span>Ciencia & Naturaleza</span>
+                <span>Expedición · Aventura</span>
+              </div>
+              <p>Grandes expediciones del planeta, vida salvaje, Shark Week y ciencia de vanguardia con la máxima fidelidad de imagen y sonido.</p>
             </div>
           </div>
         </div>
